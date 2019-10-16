@@ -174,7 +174,7 @@
 
     <style>
       body{
-        background-image: url(/img/39186698_p0.jpg);
+        background-image: url(/img/bg.png);
       }
     </style>
 
@@ -426,10 +426,10 @@
 
     var locatePost = $('.locate-thumbnail-symbol').next();
     for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 20 + 1);
+        randomNum = Math.floor(Math.random() * 19 + 1);
 
         locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/qwq-' + randomNum + '.png');
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
 
         locatePost = locatePost.next();
@@ -755,7 +755,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
     <!-- Busuanzi -->
-    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 
