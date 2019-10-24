@@ -250,7 +250,7 @@
 
     
         <meta property="article:published_time" content="Sat Oct 12 2019 09:34:15 GMT+0800">
-        <meta property="article:modified_time" content="Thu Oct 24 2019 20:04:50 GMT+0800">
+        <meta property="article:modified_time" content="Thu Oct 24 2019 20:07:10 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -273,7 +273,7 @@
     "mainEntityOfPage": "https://blog.liuzhe.site/articles/2019/10/Kruskal重构树/index.html",
     "headline": "浅谈Kruskal重构树",
     "datePublished": "Sat Oct 12 2019 09:34:15 GMT+0800",
-    "dateModified": "Thu Oct 24 2019 20:04:50 GMT+0800",
+    "dateModified": "Thu Oct 24 2019 20:07:10 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Liu Zhe",
@@ -536,11 +536,11 @@
 <p>假设我们有这张图</p>
 <p><img src="/articles/2019/10/Kruskal重构树/graph.png" alt="1"></p>
 <p>它跑完克鲁斯卡尔(降序排序)之后是这样的：</p>
-<p><img src="/articles/2019/10/Kruskal重构树/graph (1" alt="2">.png)</p>
+<p><img src="/articles/2019/10/Kruskal重构树/graph1.png" alt="2"></p>
 <p>我们先将边权排序（排序的方式决定了这个Kruskal重构树的性质），Kruskal重构树在合并两个连通块时，不会像平常一样直接合并，而是新建一个节点，令这个节点的点权为连接的边的边权。</p>
-<p><img src="/articles/2019/10/Kruskal重构树/graph (2" alt="3">.png)</p>
+<p><img src="/articles/2019/10/Kruskal重构树/graph2.png" alt="3"></p>
 <p>便于理解，我们删掉原图的边:</p>
-<p><img src="/articles/2019/10/Kruskal重构树/graph (3" alt="4">.png)</p>
+<p><img src="/articles/2019/10/Kruskal重构树/graph3.png" alt="4"></p>
 <p>Kruskal重构树就这么完成了。</p>
 <h1 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h1><p>排序的方式决定了这个Kruskal重构树的性质</p>
 <ul>
