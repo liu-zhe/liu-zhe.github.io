@@ -250,7 +250,7 @@
 
     
         <meta property="article:published_time" content="Thu Oct 24 2019 20:01:31 GMT+0800">
-        <meta property="article:modified_time" content="Thu Oct 24 2019 20:08:02 GMT+0800">
+        <meta property="article:modified_time" content="Thu Oct 24 2019 20:10:18 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -273,7 +273,7 @@
     "mainEntityOfPage": "https://blog.liuzhe.site/articles/2019/10/中山纪念中学中DAY1的记录/index.html",
     "headline": "【杂记】中山纪念中学中DAY1的记录",
     "datePublished": "Thu Oct 24 2019 20:01:31 GMT+0800",
-    "dateModified": "Thu Oct 24 2019 20:08:02 GMT+0800",
+    "dateModified": "Thu Oct 24 2019 20:10:18 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Liu Zhe",
@@ -524,7 +524,7 @@
         <p>额，这里的人都好强啊</p>
 <p>先放一下DAY1的题目吧</p>
 <h2 id="T1珂学家"><a href="#T1珂学家" class="headerlink" title="T1珂学家"></a>T1珂学家</h2><p><del>好吧，丧心病狂的我看了之后还以为是珂朵莉树</del></p>
-<p><img src="/articles/2019/10/中山纪念中学中DAY1的记录/chtholly.png" alt="chtholly.png"></p>
+<p><img src="/articles/2019/10/中山纪念中学中DAY1的记录/chtholly.png" alt="chtholly"></p>
 <p>正解1：<br>枚举 ,考虑他们的贡献。<br>可以发现是可以拆成两个区间加等差数列的形式。<br>那么差分两次，就是单点加。<br>最后在前缀和变回去即可。</p>
 <p>正解2：NTT（不会NTT的我哭出声来）</p>
 <p><del>所以说他们的NTT是用来打暴力的？？？</del></p>
@@ -967,6 +967,26 @@ It will not impact the appearance and can give developers a lot of support :)
 </script>
 
 <!-- MathJax Load-->
+
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+    <script src="https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
 
 
 <!-- Bing Background -->
