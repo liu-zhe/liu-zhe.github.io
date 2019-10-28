@@ -53,7 +53,7 @@
     
     <title>
         
-            01背包小记 | 
+            欧拉筛 | 
         
         Liu Zhe&#39;s Blog
     </title>
@@ -64,11 +64,8 @@
     <link rel="manifest" href="/manifest.json">
 
     <meta name="format-detection" content="telephone=no">
-    <meta name="description" itemprop="description" content="
-感谢太阳大佬的讲解
-
-0-1背包是一个经典的DP问题（主要是OI考）">
-    <meta name="keywords" content=",动态规划,背包">
+    <meta name="description" itemprop="description" content="本以为是琴声敲碎了月亮，定睛一看，却是湖面泛起的波纹。">
+    <meta name="keywords" content=",筛法">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -229,7 +226,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Liu Zhe&#39;s Blog">
-    <meta name="msapplication-starturl" content="https://blog.liuzhe.site/articles/2019/01/01背包小记/">
+    <meta name="msapplication-starturl" content="https://blog.liuzhe.site/articles/2019/10/欧拉筛/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Liu Zhe&#39;s Blog">
@@ -244,19 +241,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://blog.liuzhe.site/articles/2019/01/01背包小记/">
+    <meta property="og:url" content="https://blog.liuzhe.site/articles/2019/10/欧拉筛/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="01背包小记 | Liu Zhe&#39;s Blog">
+    <meta property="og:title" content="欧拉筛 | Liu Zhe&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png">
-    <meta property="og:description" content="
-感谢太阳大佬的讲解
-
-0-1背包是一个经典的DP问题（主要是OI考）">
-    <meta property="og:article:tag" content="动态规划"> <meta property="og:article:tag" content="背包"> 
+    <meta property="og:description" content="本以为是琴声敲碎了月亮，定睛一看，却是湖面泛起的波纹。">
+    <meta property="og:article:tag" content="筛法"> 
 
     
-        <meta property="article:published_time" content="Wed Jan 23 2019 21:40:22 GMT+0800">
-        <meta property="article:modified_time" content="Wed Oct 16 2019 09:59:28 GMT+0800">
+        <meta property="article:published_time" content="Mon Oct 28 2019 22:05:00 GMT+0800">
+        <meta property="article:modified_time" content="Mon Oct 28 2019 22:33:30 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -264,7 +258,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://blog.liuzhe.site/articles/2019/01/01背包小记/index.html">
+        <link rel="canonical" href="https://blog.liuzhe.site/articles/2019/10/欧拉筛/index.html">
     
 
     <!-- Structured-data for SEO -->
@@ -276,10 +270,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "https://blog.liuzhe.site/articles/2019/01/01背包小记/index.html",
-    "headline": "01背包小记",
-    "datePublished": "Wed Jan 23 2019 21:40:22 GMT+0800",
-    "dateModified": "Wed Oct 16 2019 09:59:28 GMT+0800",
+    "mainEntityOfPage": "https://blog.liuzhe.site/articles/2019/10/欧拉筛/index.html",
+    "headline": "欧拉筛",
+    "datePublished": "Mon Oct 28 2019 22:05:00 GMT+0800",
+    "dateModified": "Mon Oct 28 2019 22:33:30 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Liu Zhe",
@@ -297,11 +291,8 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",动态规划,背包",
-    "description": "
-感谢太阳大佬的讲解
-
-0-1背包是一个经典的DP问题（主要是OI考）",
+    "keywords": ",筛法",
+    "description": "本以为是琴声敲碎了月亮，定睛一看，却是湖面泛起的波纹。",
 }
 </script>
 
@@ -366,7 +357,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#定义"><span class="post-toc-number">1.</span> <span class="post-toc-text">定义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#无优化版本"><span class="post-toc-number">2.</span> <span class="post-toc-text">无优化版本</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#空间优化（重点）"><span class="post-toc-number">3.</span> <span class="post-toc-text">空间优化（重点）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#后记"><span class="post-toc-number">4.</span> <span class="post-toc-text">后记</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#欧拉筛二三事"><span class="post-toc-number">1.</span> <span class="post-toc-text">欧拉筛二三事</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#算法思想"><span class="post-toc-number">2.</span> <span class="post-toc-text">算法思想</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码"><span class="post-toc-number">3.</span> <span class="post-toc-text">代码</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#THE-END"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">THE END</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -398,7 +389,7 @@
         
     
             <p class="article-headline-p">
-                01背包小记
+                欧拉筛
             </p>
         </div>
 
@@ -417,7 +408,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Liu Zhe</strong>
-        <span>1月 23, 2019</span>
+        <span>10月 28, 2019</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -441,7 +432,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/动态规划/">动态规划</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/背包/">背包</a>
+        <a class="post_tag-link" href="/tags/筛法/">筛法</a>
     </ul>
     
 
@@ -469,7 +460,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=01背包小记&url=https://blog.liuzhe.site/articles/2019/01/01背包小记/index.html&pic=https://blog.liuzhe.site/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=欧拉筛&url=https://blog.liuzhe.site/articles/2019/10/欧拉筛/index.html&pic=https://blog.liuzhe.site/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -478,7 +469,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=01背包小记&url=https://blog.liuzhe.site/articles/2019/01/01背包小记/index.html&via=Liu Zhe" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=欧拉筛&url=https://blog.liuzhe.site/articles/2019/10/欧拉筛/index.html&via=Liu Zhe" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -487,7 +478,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.liuzhe.site/articles/2019/01/01背包小记/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.liuzhe.site/articles/2019/10/欧拉筛/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -496,7 +487,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://blog.liuzhe.site/articles/2019/01/01背包小记/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://blog.liuzhe.site/articles/2019/10/欧拉筛/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -505,7 +496,7 @@
 
     <!-- Share LinkedIn -->
     
-        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://blog.liuzhe.site/articles/2019/01/01背包小记/index.html&title=01背包小记" target="_blank">
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://blog.liuzhe.site/articles/2019/10/欧拉筛/index.html&title=欧拉筛" target="_blank">
             <li class="mdl-menu__item">
                 分享到 LinkedIn
             </li>
@@ -514,7 +505,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Liu Zhe&#39;s Blog&title=01背包小记&summary=本以为是琴声敲碎了月亮，定睛一看，却是湖面泛起的波纹。&pics=https://blog.liuzhe.site/img/favicon.png&url=https://blog.liuzhe.site/articles/2019/01/01背包小记/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Liu Zhe&#39;s Blog&title=欧拉筛&summary=本以为是琴声敲碎了月亮，定睛一看，却是湖面泛起的波纹。&pics=https://blog.liuzhe.site/img/favicon.png&url=https://blog.liuzhe.site/articles/2019/10/欧拉筛/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -523,7 +514,7 @@
 
     <!-- Share Telegram -->
     
-        <a class="post_share-link" href="https://telegram.me/share/url?url=https://blog.liuzhe.site/articles/2019/01/01背包小记/index.html&text=01背包小记" target="_blank">
+        <a class="post_share-link" href="https://telegram.me/share/url?url=https://blog.liuzhe.site/articles/2019/10/欧拉筛/index.html&text=欧拉筛" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Telegram
             </li>
@@ -539,88 +530,60 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <blockquote>
-<p>感谢太阳大佬的讲解</p>
-</blockquote>
-<p>0-1背包是一个经典的DP问题（主要是OI考）<br><a id="more"></a> </p>
-<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>有N件物品和一个容量为V 的背包。放入第i件物品耗费的背包容量是W[i]，得到的价值是C[i]。求将哪些物品装入背包可使价值总和最大，而每件物品只有一个，可以选择不放。</p>
-<p>0-1背包是其他背包问题的基础</p>
-<h3 id="无优化版本"><a href="#无优化版本" class="headerlink" title="无优化版本"></a>无优化版本</h3><p>我们用一个数组 f[i][v]来表示这个虚拟的背包，表示前i件物品恰放入一个容量为v的背包可 以获得的最大价值。</p>
-<p>对于每一种物品，我们可以选或者不选，不选的话呢一切状态不变，选的话呢，则背包的容量减去W[i]，背包里的物品价值加上C[i]。</p>
-<p>于是我们可得到它的状态转移方程：</p>
-<p>F[ⅈ][v]=max⁡(F[ⅈ−1][v],F[ⅈ−1][v−W[ⅈ]]+C[ⅈ])</p>
-<p>这个方程非常重要，基本上所有跟背包相关的问题的方程都是由它衍生 出来的。所以有必要将它详细解释一下：“将前i件物品放入容量为v的背包 中”这个子问题，若只考虑第i件物品的策略（放或不放），那么就可以转化 为一个只和前i−1件物品相关的问题。如果不放第i件物品，那么问题就转化 为“前i−1件物品放入容量为v的背包中”，价值为F[i−1,v]；如果放第i件物 品，那么问题就转化为“前i−1件物品放入剩下的容量为v −Wi的背包中”， 此时能获得的最大价值就是F[i−1,v −Wi]再加上通过放入第i件物品获得的价 值Ci。——《背包九讲》</p>
-<pre><code class="lang-cpp">//code by extmool
-#include &lt;iostream&gt;
-
-#define V 500   //可以用 const int V=500 来代替
-
-using namespace std;
-
-int weight[20 + 1];
-int value[20 + 1];
-int f[20 + 1][V + 1];
-
-int main() {
-    int n, m;
-    cout &lt;&lt; &quot;请输入物品个数:&quot;;
-    cin &gt;&gt; n;
-    cout &lt;&lt; &quot;请分别输入&quot; &lt;&lt; n &lt;&lt; &quot;个物品的重量和价值:&quot; &lt;&lt; endl; 
-    for (int i = 1; i &lt;= n; i++) {
-        cin &gt;&gt; weight[i] &gt;&gt; value[i];
-    }
-    cout &lt;&lt; &quot;请输入背包容量:&quot;;
-    cin &gt;&gt; m;
-    for (int i = 1; i &lt;= n; i++) {
-        for (int j = 1; j &lt;= m; j++) {
-            if (weight[i] &gt; j) {
-                f[i][j] = f[i - 1][j];
-            }
-            else {
-                f[i][j] = f[i - 1][j] &gt; f[i - 1][j - weight[i]] + value[i] ? f[i - 1][j] : f[i - 1][j - weight[i]] + value[i];
-            }
-        }
-    }    
-    cout &lt;&lt; &quot;背包能放的最大价值为:&quot; &lt;&lt; f[n][m] &lt;&lt; endl; //输出最大价值
+        <p>前置芝士：<a href="https://blog.liuzhe.site/articles/2019/10/%E5%9F%83%E6%B0%8F%E7%AD%9B%E5%B0%8F%E8%AE%B0/">Eratosthenes 筛法 （埃拉托斯特尼筛法）</a></p>
+<h2 id="欧拉筛二三事"><a href="#欧拉筛二三事" class="headerlink" title="欧拉筛二三事"></a>欧拉筛二三事</h2><p>其实没什么辣，欧拉筛只是埃筛的一个小优化。</p>
+<p>我们分析一下埃筛的代码：</p>
+<pre><code class="lang-cpp">void sieve ()
+{
+    composite[0] = true;  //0和1都是素数
+    composite[1] = true;
+    for (register int i = 2; i &lt;= n; i++)  //一直筛到n
+        for (register int j = i + i; j &lt;= n; j += i)  //如果一个数是素数,那么它的倍数也一定是素数
+            composite[j] = true;  //标记素数
 }
 </code></pre>
-<h3 id="空间优化（重点）"><a href="#空间优化（重点）" class="headerlink" title="空间优化（重点）"></a>空间优化（重点）</h3><p>我们压缩一下数组，方程就变成了这样</p>
-<p>F[v]=max⁡(F[v],F[v - W[ⅈ]] + C[ⅈ])</p>
-<p>但是第二重循环要逆序</p>
-<p>为什么可以逆序？<br>因为我们如果正序循环修改了1个数的话，后面可能会用该数进行2次辨断，这样可能会多选几次。</p>
+<p>注意这里：</p>
+<pre><code class="lang-cpp">for (register int j = i + i; j &lt;= n; j += i)  //如果一个数是素数,那么它的倍数也一定是素数
+         composite[j] = true;  //标记素数
+</code></pre>
+<p>这段代码在无脑的筛掉元素，为什么称它“无脑”呢？</p>
+<p>对于同一个元素，埃筛可能会将它筛掉好多次。</p>
+<p>埃氏筛时间复杂度：$O(n\log\log n)$</p>
+<p>而接下来要介绍的<em>欧拉筛</em>的时间复杂度可以达到$O(n)$</p>
+<h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><blockquote>
+<p>这里的欧拉筛全部以筛素数为例</p>
+</blockquote>
+<p>对于一个合数，欧拉筛会确保它只被筛一次。</p>
+<p>我们必须明确一下几点：</p>
+<ol>
+<li>任何合数都可以表示为多个素数之积</li>
+<li>每个合数必有一个最小素因子</li>
+</ol>
+<p>我们只需找出每个数的最小素因子即可。</p>
+<p>先放一下代码，后面继续<del>江</del>。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code class="lang-cpp">void eulerSieve()
+{
+    composite[0] = true;
+    composite[1] = true;
+    for (register int i = 2; i &lt;= n; i++)
+    {
+        if (!composite[i]) //是素数的话，我们就把它加入列表中
+            ans[++num] = i;
+        for (register int j = 1; j &lt;= num &amp;&amp; i * ans[j] &lt;= n; j++) //i * ans[j] &lt;= n 判边界
+        {
+            composite[i * ans[j]] = true;  //（1）
+            if (i % ans[j] == 0)
+                break;
+        }
+    }
+}
+</code></pre>
 <blockquote>
-<p>懒得敲代码了</p>
+<p>字比较丑 QWQ~~~</p>
 </blockquote>
-<pre><code class="lang-cpp">//code by extmool
-#include &lt;iostream&gt;
-#define V 500
-using namespace std;
-int weight[20 + 1];
-int value[20 + 1];
-int f[V + 1];
-int main() {
-    int n, m;
-    cout &lt;&lt; &quot;请输入物品个数:&quot;;
-    cin &gt;&gt; n;
-    cout &lt;&lt; &quot;请分别输入&quot; &lt;&lt; n &lt;&lt; &quot;个物品的重量和价值:&quot; &lt;&lt; endl; 
-    for (int i = 1; i &lt;= n; i++) {
-        cin &gt;&gt; weight[i] &gt;&gt; value[i];
-    }
-    cout &lt;&lt; &quot;请输入背包容量:&quot;;
-    cin &gt;&gt; m;
-    for (int i = 1; i &lt;= n; i++) {
-        for (int j = m; j &gt;= 1; j--) {
-            if (weight[i] &lt;= j) {
-                f[j] = f[j] &gt; f[j - weight[i]] + value[i] ? f[j] : f[j - weight[i]] + value[i];
-            }
-        }
-    }
-    cout &lt;&lt; &quot;背包能放的最大价值为:&quot; &lt;&lt; f[m] &lt;&lt; endl;
-}
-</code></pre>
-<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>时间仓促，如有ｂｕｇ请大佬指出，Ｔｈａｎｋｓ <del>%%%</del></p>
-<p>至于正序会怎么样？　秒变完全背包</p>
-
+<p>(1)：</p>
+<p><img src="/articles/2019/10/欧拉筛/1.png" alt="1"></p>
+<h3 id="THE-END"><a href="#THE-END" class="headerlink" title="THE END"></a>THE END</h3>
         
     
 
@@ -665,21 +628,13 @@ int main() {
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/articles/2019/01/转载－KMP算法/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/articles/2018/12/差分/" id="post_nav-older" class="next-content">
+        <a href="/articles/2019/10/洛谷-P1469-找筷子/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
