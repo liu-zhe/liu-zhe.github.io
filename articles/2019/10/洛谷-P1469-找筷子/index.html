@@ -53,7 +53,7 @@
     
     <title>
         
-            标签: 树链剖分 | 
+            洛谷-P1469-找筷子 | 
         
         Liu Zhe&#39;s Blog
     </title>
@@ -65,7 +65,7 @@
 
     <meta name="format-detection" content="telephone=no">
     <meta name="description" itemprop="description" content="本以为是琴声敲碎了月亮，定睛一看，却是湖面泛起的波纹。">
-    <meta name="keywords" content>
+    <meta name="keywords" content=",idea">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -226,7 +226,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Liu Zhe&#39;s Blog">
-    <meta name="msapplication-starturl" content="https://blog.liuzhe.site/tags/树链剖分/">
+    <meta name="msapplication-starturl" content="https://blog.liuzhe.site/articles/2019/10/洛谷-P1469-找筷子/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Liu Zhe&#39;s Blog">
@@ -241,13 +241,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://blog.liuzhe.site/tags/树链剖分/">
+    <meta property="og:url" content="https://blog.liuzhe.site/articles/2019/10/洛谷-P1469-找筷子/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="标签: 树链剖分 | Liu Zhe&#39;s Blog">
+    <meta property="og:title" content="洛谷-P1469-找筷子 | Liu Zhe&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="本以为是琴声敲碎了月亮，定睛一看，却是湖面泛起的波纹。">
-    
+    <meta property="og:article:tag" content="idea"> 
 
+    
+        <meta property="article:published_time" content="Mon Oct 28 2019 17:14:46 GMT+0800">
+        <meta property="article:modified_time" content="Mon Oct 28 2019 17:16:30 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -255,13 +258,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://blog.liuzhe.site/tags/树链剖分/index.html">
+        <link rel="canonical" href="https://blog.liuzhe.site/articles/2019/10/洛谷-P1469-找筷子/index.html">
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://blog.liuzhe.site/articles/2019/10/洛谷-P1469-找筷子/index.html",
+    "headline": "洛谷-P1469-找筷子",
+    "datePublished": "Mon Oct 28 2019 17:14:46 GMT+0800",
+    "dateModified": "Mon Oct 28 2019 17:16:30 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Liu Zhe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/me.jpg"
+        },
+        "description": ""
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Liu Zhe&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",idea",
+    "description": "本以为是琴声敲碎了月亮，定睛一看，却是湖面泛起的波纹。",
+}
+</script>
 
 
     
@@ -295,93 +328,333 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#题目描述"><span class="post-toc-number">1.</span> <span class="post-toc-text">题目描述</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#输入格式"><span class="post-toc-number">2.</span> <span class="post-toc-text">输入格式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#输出格式"><span class="post-toc-number">3.</span> <span class="post-toc-text">输出格式</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#题解"><span class="post-toc-number"></span> <span class="post-toc-text">题解</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Subtask-1-60-pts"><span class="post-toc-number">0.1.</span> <span class="post-toc-text">Subtask #1 (60 pts)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#正解：位运算"><span class="post-toc-number">0.2.</span> <span class="post-toc-text">正解：位运算</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#代码"><span class="post-toc-number">1.</span> <span class="post-toc-text">代码</span></a></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/articles/2019/10/树链剖分—重链剖分小记/">树链剖分—重链剖分小记</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            树链剖分可以将一棵树剖为很多条链，这样据可以供其他的数据结构维护，（树剖/链剖）有多种形式，如 重链剖分 ， 长链剖分 和用于 Link/cut Tree 的剖分（有时被称作“实链剖分”），大多数情况下（没有特别说明时），“树链剖分”都指“重链剖分”，本文所讲的也是“重链剖分”。
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/articles/2019/10/树链剖分—重链剖分小记/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/me.jpg" width="44px" height="44px" alt="Liu Zhe's avatar">
-            </div>
-            <div>
-                <strong>Liu Zhe</strong>
-                <span>10月 04, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                洛谷-P1469-找筷子
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/me.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Liu Zhe</strong>
+        <span>10月 28, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/idea/">idea</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=洛谷-P1469-找筷子&url=https://blog.liuzhe.site/articles/2019/10/洛谷-P1469-找筷子/index.html&pic=https://blog.liuzhe.site/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=洛谷-P1469-找筷子&url=https://blog.liuzhe.site/articles/2019/10/洛谷-P1469-找筷子/index.html&via=Liu Zhe" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.liuzhe.site/articles/2019/10/洛谷-P1469-找筷子/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://blog.liuzhe.site/articles/2019/10/洛谷-P1469-找筷子/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://blog.liuzhe.site/articles/2019/10/洛谷-P1469-找筷子/index.html&title=洛谷-P1469-找筷子" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Liu Zhe&#39;s Blog&title=洛谷-P1469-找筷子&summary=本以为是琴声敲碎了月亮，定睛一看，却是湖面泛起的波纹。&pics=https://blog.liuzhe.site/img/favicon.png&url=https://blog.liuzhe.site/articles/2019/10/洛谷-P1469-找筷子/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+        <a class="post_share-link" href="https://telegram.me/share/url?url=https://blog.liuzhe.site/articles/2019/10/洛谷-P1469-找筷子/index.html&text=洛谷-P1469-找筷子" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Telegram
+            </li>
+        </a>
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>(题目链接)[<a href="https://www.luogu.org/problem/P1469" target="_blank" rel="noopener">https://www.luogu.org/problem/P1469</a>]</p>
+<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p><strong>！！！内存限制4MB！！！</strong></p>
+<p>经过一段时间的紧张筹备，电脑小组的“RP餐厅”终于开业了，这天，经理LXC接到了一个定餐大单，可把大家乐坏了！员工们齐心协力按要求准备好了套餐正准备派送时，突然碰到一个棘手的问题，筷子！CX小朋友找出了餐厅中所有的筷子，但遗憾的是这些筷子长短不一，而我们都知道筷子需要长度一样的才能组成一双，更麻烦的是CX找出来的这些筷子数量为奇数，但是巧合的是，这些筷子中只有一只筷子是落单的，其余都成双，善良的你，可以帮CX找出这只落单的筷子的长度吗？</p>
+<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>第一行读入一个数N，它代表CX找到的筷子的根数。</p>
+<p>第二行是N个用空格隔开的数，代表筷子的长度。</p>
+<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>一行，落单的筷子的长度。</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h4 id="Subtask-1-60-pts"><a href="#Subtask-1-60-pts" class="headerlink" title="Subtask #1 (60 pts)"></a>Subtask #1 (60 pts)</h4><p>开一个数组，对其进行排序，我们暴力扫一遍，判断哪个数出现了奇数次，哪个数就是答案。</p>
+<pre><code class="lang-cpp">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+int n,a[1000005];
+
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin&gt;&gt;n;
+    for(register int i=1;i&lt;=n;i++)
+        cin&gt;&gt;a[i];        
+    sort(a+1,a+n+1);
+    for(register int i=1;i&lt;=n;i++)
+    {
+        int cnt=1;
+        for(register int j=i+1;a[j]==a[j-1];j++)
+        {
+            cnt++;
+            i=j;;
+        }
+        if(cnt % 2 != 0)cout&lt;&lt;a[i];
+    }
+}
+</code></pre>
+<h4 id="正解：位运算"><a href="#正解：位运算" class="headerlink" title="正解：位运算"></a>正解：位运算</h4><p>不知大家有没有听过<strong>异或</strong>运算。</p>
+<p>异或运算的性质：</p>
+<ul>
+<li>如果两个数为1，就为0</li>
+<li>如果两个数为0，就为0</li>
+<li>如果两个数有一个为1，另一个为0，就为1</li>
+</ul>
+<p>其实就是二进制下的不进位加法。</p>
+<p>我们还能发现：</p>
+<ol>
+<li><strong>两个相同的数进行异或运算后一定为0</strong></li>
+<li><strong>任何数异或0都不变</strong></li>
+</ol>
+<p>所以，我们只需对所有的数异或一遍，最后剩的数即为答案。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre><code class="lang-cpp">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+int n, a, ans;
+int main()
+{
+    cin&gt;&gt;n;
+    for(register int i=1;i&lt;=n;i++)
+    {
+        cin &gt;&gt; a;
+        ans ^= a;
+    }
+    cout &lt;&lt; ans &lt;&lt; endl;
+}
+</code></pre>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <div id="comment" style='padding:10px;' class="vcomment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    var GUEST_INFO = ['nick','mail','link'];
+    var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+        return GUEST_INFO.indexOf(item) > -1
+    });
+    var notify = 'false' === 'true';
+    var verify = 'true' === 'true';
+    new Valine({
+        el: '.vcomment',
+        notify: notify,
+        verify: verify,
+        appId: "gocYCJk4cAlwaWI9tryhxwCU-gzGzoHsz",
+        appKey: "oSEdaIVrp0b7kMDuQdGQB0G1",
+        placeholder: "输入吧～～ qwq",
+        pageSize:'10',
+        avatar:'identicon',
+        lang:'zh-cn',
+        guest_info: guest_info
+    });
+</script>
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/articles/2019/10/UVA1395-苗条的生成树-Slim-Span-题解/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -557,6 +830,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 
