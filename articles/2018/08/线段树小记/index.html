@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+
+
+
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            线段树小记 | 
+        
+        Liu Zhe&#39;s Blog
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+    <link rel="manifest" href="/manifest.json">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" itemprop="description" content="
+线段树是一种二叉搜索树，时间复杂度为O(logN），它与二叉搜索树不同的是它的每一个节点表示的是一个区间的和，最小值，最大值等等（这要看题目如何要求了）。">
+    <meta name="keywords" content=",线段树,区间">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/tomorrow.min.css?HIeSQl6y3t6jBuxHvLPGSA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Liu Zhe&#39;s Blog">
+    <meta name="msapplication-starturl" content="https://blog.liuzhe.site/articles/2018/08/线段树小记/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Liu Zhe&#39;s Blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://blog.liuzhe.site/articles/2018/08/线段树小记/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="线段树小记 | Liu Zhe&#39;s Blog">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="
+线段树是一种二叉搜索树，时间复杂度为O(logN），它与二叉搜索树不同的是它的每一个节点表示的是一个区间的和，最小值，最大值等等（这要看题目如何要求了）。">
+    <meta property="og:article:tag" content="线段树"> <meta property="og:article:tag" content="区间"> 
+
+    
+        <meta property="article:published_time" content="Mon Aug 06 2018 21:52:06 GMT+0800">
+        <meta property="article:modified_time" content="Wed Oct 16 2019 09:22:42 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://blog.liuzhe.site/articles/2018/08/线段树小记/index.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://blog.liuzhe.site/articles/2018/08/线段树小记/index.html",
+    "headline": "线段树小记",
+    "datePublished": "Mon Aug 06 2018 21:52:06 GMT+0800",
+    "dateModified": "Wed Oct 16 2019 09:22:42 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Liu Zhe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/me.jpg"
+        },
+        "description": ""
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Liu Zhe&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",线段树,区间",
+    "description": "
+线段树是一种二叉搜索树，时间复杂度为O(logN），它与二叉搜索树不同的是它的每一个节点表示的是一个区间的和，最小值，最大值等等（这要看题目如何要求了）。",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#啥是线段树呀？"><span class="post-toc-number">1.</span> <span class="post-toc-text">啥是线段树呀？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#线段树咋实现呀？"><span class="post-toc-number">2.</span> <span class="post-toc-text">线段树咋实现呀？</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                线段树小记
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/me.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Liu Zhe</strong>
+        <span>8月 06, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/区间/">区间</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/线段树/">线段树</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=线段树小记&url=https://blog.liuzhe.site/articles/2018/08/线段树小记/index.html&pic=https://blog.liuzhe.site/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=线段树小记&url=https://blog.liuzhe.site/articles/2018/08/线段树小记/index.html&via=Liu Zhe" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.liuzhe.site/articles/2018/08/线段树小记/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://blog.liuzhe.site/articles/2018/08/线段树小记/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://blog.liuzhe.site/articles/2018/08/线段树小记/index.html&title=线段树小记" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Liu Zhe&#39;s Blog&title=线段树小记&summary=本以为是琴声敲碎了月亮，定睛一看，却是湖面泛起的波纹。&pics=https://blog.liuzhe.site/img/favicon.png&url=https://blog.liuzhe.site/articles/2018/08/线段树小记/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+        <a class="post_share-link" href="https://telegram.me/share/url?url=https://blog.liuzhe.site/articles/2018/08/线段树小记/index.html&text=线段树小记" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Telegram
+            </li>
+        </a>
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <blockquote>
+<p>线段树是一种二叉搜索树，时间复杂度为O(logN），它与二叉搜索树不同的是它的每一个节点表示的是一个区间的和，最小值，最大值等等（这要看题目如何要求了）。<br><a id="more"></a> </p>
+<h3 id="啥是线段树呀？"><a href="#啥是线段树呀？" class="headerlink" title="啥是线段树呀？"></a>啥是线段树呀？</h3><p>线段树是一种二叉搜索树，它与二叉搜索树不同的是它的每一个节点表示的是一个区间的和，最小值，最大值等等（这要看题目如何要求了）。</p>
+</blockquote>
+<p>下图是一个表示区间和的线段树</p>
+<p><img src="/articles/2018/08/线段树小记/1.jpeg" alt="1"></p>
+<p>线段树支持区间修改，区间查询。<br>线段树节点的左儿子是它区间的左边一半，同理，右儿子是右边一半，当这个区间中的元素只有一个时，它就是叶子节点。</p>
+<h3 id="线段树咋实现呀？"><a href="#线段树咋实现呀？" class="headerlink" title="线段树咋实现呀？"></a>线段树咋实现呀？</h3><p>我们有一个区间长度为n的线段树，有m次操作。</p>
+<p>我们开一个数组z来存储线段树。</p>
+<pre><code class="lang-cpp">const int maxn=1000005;
+int m,n,z[maxn]={};
+</code></pre>
+<p>我们先来写一个建立求区间和的线段树函数</p>
+<blockquote>
+<p>l，r是当前区间的左右端点，rt是当前节点编号</p>
+</blockquote>
+<pre><code class="lang-cpp">void update(int rt)
+{
+        z[rt] = z[rt*2] + z[rt*2+1];    //我们的线段是处理区间和的，所以我写了“+”；
+}
+
+void build(int l, int r,int rt) //建立一棵线段树
+{
+        if(l == r)              //当左端点=右端点时，就表示它是一个叶子节点，这时我们就给它赋值
+        {
+                int v;
+                scanf(&quot;%d&quot;,&amp;v);
+                z[rt]=v;
+                return;
+        }
+        int m=(l+r)/2;          //二分当前区间
+        build(lson);            //左边一段作为左子树，递归建立左子树
+        build(rson);            //右边一段作为右子树，递归建立右子树
+        update(rt);             //将左右子树的修改应用于当前节点
+}
+</code></pre>
+<p>对于一个线段树，他的左儿子的区间一定是 l~m,右儿子一定是m~r，所以我们宏定义一下</p>
+<pre><code class="lang-cpp">#define lson l,m,rt*2
+#define rson m+1,r,rt*2+1
+</code></pre>
+<p>下面是查询区间和的函数</p>
+<blockquote>
+<p>findl表示要询问的区间的左端点，findr表示要询问的区间的右端点</p>
+</blockquote>
+<pre><code class="lang-cpp">#define lson l,m,rt*2
+#define rson m+1,r,rt*2+1
+
+int query(int l,int r,int rt,int findl,int findr)               //询问某段区间的和
+{
+        if(findl==l &amp;&amp; r==findr) return z[rt];                  //当前端点等于要找的端点时 返回
+        int m=(l+r)/2;                  //二分当前区间
+        if(findl&lt;=m) return query(lson,findl,findr);     //要找的区间在左子树上
+        else return query(rson,findl,findr);             //要找的区间在右子树上
+}
+</code></pre>
+<p>问题来了，如果我们要找的区间在要找的区间贯穿左右子树时要怎么办呢？<br>比如说我们要求区间【4，7】的和。<br><img src="/articles/2018/08/线段树小记/3.jpeg" alt="3"></p>
+<p>那我们就左右各查询一半吧！</p>
+<p><img src="/articles/2018/08/线段树小记/2.jpeg" alt="2"></p>
+<p>于是程序变成了。。。</p>
+<pre><code class="lang-cpp">#define lson l,m,rt*2
+#define rson m+1,r,rt*2+1
+
+int query(int l,int r,int rt,int findl,int findr)       //询问某段区间的和
+{
+        if(findl==l &amp;&amp; r==findr) return z[rt];                  //当前端点等于要找的端点时 返回
+        int m=(l+r)/2;                  //二分当前区间
+        if(findl&lt;=m)                    //要找的区间在左子树上
+        {
+                if(m&lt;findr) return query(lson,findl,m)+query(rson,m+1,findr);   //特判：要找的区间贯穿左右子树
+                else return query(lson,findl,findr);
+        }
+        else return query(rson,findl,findr);    //要找的区间在右子树上
+}
+</code></pre>
+<p>下面是修改区间的函数，和查询的函数有几分相似</p>
+<pre><code class="lang-cpp">#define lson l,m,rt*2
+#define rson m+1,r,rt*2+1
+
+void modify(int l,int r,int rt,int findl,int findr,int v) //修改findl~findr区间的值，把它们都加上v
+{
+        if(l==r)                        //将区间的修改应用于它的每一个子节点
+        {
+                z[rt]+=v;
+                return;
+        }
+        int m=(l+r)/2;                  //二分当前区间
+        if(findl&lt;=m)                    //要修改的区间在左子树上
+        {
+                if(m&lt;findr)             //特判：要改的区间贯穿左右子树
+                {
+                        modify(lson,findl,m,v);         //在左子树上改findl~m这段
+                        modify(rson,m+1,findr,v);       //在右子树上改m+1~findr这段
+                }
+                else modify(lson,findl,findr,v);
+        }
+        else modify(rson,findl,findr,v);                //要找的区间在右子树上
+        update(rt);
+}
+</code></pre>
+<p>下面是主程序：</p>
+<pre><code class="lang-cpp">int main()
+{
+        scanf(&quot;%d%d&quot;,&amp;n,&amp;m);    //线段树区间的长度为n，有次操作
+        build(root);            //从根结点开始建立线段树
+
+        for(int i=1;i&lt;=m;i++)
+        {
+                int cmd;
+                scanf(&quot;%d&quot;,&amp;cmd);
+                switch(cmd)
+                {
+                        case 1:                 //修改线段树节点值
+                        int findl,findr,v;
+                        scanf(&quot;%d%d%d&quot;,&amp;findl,&amp;findr,&amp;v);
+                        modify(root,findl,findr,v);     //从根结点递归修改
+                        break;
+
+                        case 2:                 //询问线段树l~r区间的和
+                        int l,r;
+                        scanf(&quot;%d%d&quot;,&amp;l,&amp;r);
+                        int re=query(root,l,r);
+                        printf(&quot;%d\n&quot;,re);
+                        break;
+                }
+        }
+        return 0;
+}
+</code></pre>
+<p>对于一个线段树，他的根结点的区间一定是 1~n,编号一定是1，所以我们宏定义一下</p>
+<pre><code class="lang-cpp">#define root 1,n,1
+</code></pre>
+<p>自此，我们的朴素的线段树完工了。</p>
+<p>代码：</p>
+<pre><code class="lang-cpp">#include &lt;cstdio&gt;
+
+#define root 1,n,1
+#define lson l,m,rt*2
+#define rson m+1,r,rt*2+1
+
+const int maxn=1000005;
+int m,n,z[maxn]={};
+
+void update(int rt)
+{
+    z[rt] = z[rt*2] + z[rt*2+1];    //我们的线段是处理区间和的，所以我们写了“+”；
+}
+
+void build(int l, int r,int rt) //建立一棵线段树
+{
+    if(l == r)        //当左端点=右端点时，就表示它是一个叶子节点，这时我们就给它赋值
+    {
+        int v;
+        scanf(&quot;%d&quot;,&amp;v);
+        z[rt]=v;
+        return;
+    }
+    int m=(l+r)/2;        //二分当前区间
+    build(lson);        //左边一段作为左子树，递归建立左子树
+    build(rson);        //右边一段作为右子树，递归建立右子树
+    update(rt);        //将左右子树的修改应用于当前节点
+}
+
+void modify(int l,int r,int rt,int findl,int findr,int v) //修改findl~findr区间的值，把它们都加上v
+{
+    if(l==r)            //将区间的修改应用于它的每一个子节点
+    {
+        z[rt]+=v;
+        return;
+    }
+    int m=(l+r)/2;            //二分当前区间
+    if(findl&lt;=m)            //要修改的区间在左子树上
+    {
+        if(m&lt;findr)        //特判：要改的区间贯穿左右子树
+        {
+            modify(lson,findl,m,v);        //在左子树上改findl~m这段
+            modify(rson,m+1,findr,v);    //在右子树上改m+1~findr这段
+        }
+        else modify(lson,findl,findr,v);
+    }
+    else modify(rson,findl,findr,v);        //要找的区间在右子树上
+    update(rt);
+}
+
+int query(int l,int r,int rt,int findl,int findr)        //询问某段区间的和 findl表示要询问的区间的左端点，findr表示要询问的区间的右端点
+{
+    if(findl==l &amp;&amp; r==findr) return z[rt];            //当前端点等于要找的端点时 返回
+    int m=(l+r)/2;            //二分当前区间
+    if(findl&lt;=m)            //要找的区间在左子树上
+    {
+        if(m&lt;findr) return query(lson,findl,m)+query(rson,m+1,findr);    //特判：要找的区间贯穿左右子树
+        else return query(lson,findl,findr);
+    }
+    else return query(rson,findl,findr);    //要找的区间在右子树上
+}
+
+int main()
+{
+    scanf(&quot;%d%d&quot;,&amp;n,&amp;m);     //线段树区间的长度为n，有次操作
+    build(root);         //从根结点开始建立线段树
+
+    for(int i=1;i&lt;=m;i++)
+    {
+        int cmd;
+        scanf(&quot;%d&quot;,&amp;cmd);
+        switch(cmd)
+        {
+            case 1:            //修改线段树节点值
+            int findl,findr,v;
+            scanf(&quot;%d%d%d&quot;,&amp;findl,&amp;findr,&amp;v);
+            modify(root,findl,findr,v);     //从根结点递归修改
+            break;
+
+            case 2:            //询问线段树l~r区间的和
+            int l,r;
+            scanf(&quot;%d%d&quot;,&amp;l,&amp;r);
+            int re=query(root,l,r);
+            printf(&quot;%d\n&quot;,re);
+            break;
+        }
+    }
+    return 0;
+}
+</code></pre>
+<p>我们来调个题试试。</p>
+<p><a href="https://www.luogu.org/problemnew/show/P3372" target="_blank" rel="noopener">【模板】线段树 1</a></p>
+<p>把程序提交上去，发现T了3个点</p>
+<p>为神魔呢？</p>
+<p>这里给大家一些时间思考</p>
+<p><del>时间</del></p>
+<p><del>时间</del></p>
+<p><del>时间</del></p>
+<p><del>时间</del></p>
+<p><del>时间</del></p>
+<p><del>时间</del></p>
+<p><del>时间</del></p>
+<p><del>时间</del></p>
+<p><del>时间</del></p>
+<p><del>时间</del></p>
+<p><del>时间</del></p>
+<p><del>时间</del></p>
+<p>好惹，现在让我们<del>开倒车</del>回去，再看一遍我们的代码。</p>
+<pre><code class="lang-cpp">#define lson l,m,rt*2
+#define rson m+1,r,rt*2+1
+
+
+void modify(int l,int r,int rt,int findl,int findr,int v) //修改findl~findr区间的值，把它们都加上v
+{
+    if(l==r)            //将区间的修改应用于它的每一个子节点
+    {
+        z[rt]+=v;
+        return;
+    }
+    int m=(l+r)/2;            //二分当前区间
+    if(findl&lt;=m)            //要修改的区间在左子树上
+    {
+        if(m&lt;findr)        //特判：要改的区间贯穿左右子树
+        {
+            modify(lson,findl,m,v);        //在左子树上改findl~m这段
+            modify(rson,m+1,findr,v);    //在右子树上改m+1~findr这段
+        }
+        else modify(lson,findl,findr,v);
+    }
+    else modify(rson,findl,findr,v);        //要找的区间在右子树上
+    update(rt);
+}
+</code></pre>
+<p>你会发现<del>童话里都是骗人的</del>,我们的代蟆如果要修改一个区间，也会递归修改它的每一个子区间（子节点），但有时我们可能不查询它的子区间。这时我们就做了许多吴用公，于是，就有了线段树的一个叫【懒惰标记】的东西。</p>
+<p>它的实现方法就是在修改区间的值时，不递归修改他的子区间，而是打一个标记，标记一下要修改多少，等到用户要访问它的子区间时，再现修改子区间。</p>
+<p>代码如下：</p>
+<pre><code class="lang-cpp">#define lson l,m,rt*2
+#define rson m+1,r,rt*2+1
+
+void add(int l,int r,int rt,int v)      //给l～r 编号为rt的区间加上v，同时打标记
+{
+    z[rt] += (r-l+1) * v;
+    flag[rt] += v;               //给它打一个v，为避免覆盖，这里是+=
+}
+
+void push_down(int l,int r,int rt)      //在询问时，把标记下放
+{
+    if(flag[rt] != 0)
+    {
+        int m=(l+r)/2;
+        add(lson,flag[rt]);  //打左儿子
+        add(rson,flag[rt]);  //打右儿子 233
+        flag[rt]=0;       //标记清零
+    }
+}
+</code></pre>
+<p>同时，修改和查询的函数也要改一下</p>
+<pre><code class="lang-cpp">#define lson l,m,rt*2
+#define rson m+1,r,rt*2+1
+#define now_node l,r,rt
+
+void modify(int l,int r,int rt,int findl,int findr,int v) //修改findl~findr区间的值，把它们都加上v
+{
+    if(findl&lt;=l &amp;&amp; r&lt;=findr)             //将区间的修改应用于它的每一个子节点
+    {
+        add(now_node,v);
+        return;
+    }
+    push_down(now_node);
+    int m=(l+r)/2;            //二分当前区间
+    if(findl&lt;=m)            //要修改的区间在左子树上
+    {
+        if(m&lt;findr)        //特判：要改的区间贯穿左右子树
+        {
+            modify(lson,findl,m,v);        //在左子树上改findl~m这段
+            modify(rson,m+1,findr,v);    //在右子树上改m+1~findr这段
+        }
+        else modify(lson,findl,findr,v);
+    }
+    else modify(rson,findl,findr,v);        //要找的区间在右子树上
+    update(rt);
+}
+
+int query(int l,int r,int rt,int findl,int findr)        //询问某段区间的和 findl表示要询问的区间的左端点，findr表示要询问的区间的右端点
+{
+    if(findl==l &amp;&amp; r==findr) return z[rt];        //当前端点等于要找的端点时 返回
+    push_down(now_node);
+    int m=(l+r)/2;            //二分当前区间
+    if(findl&lt;=m)            //要找的区间在左子树上
+    {
+        if(m&lt;findr) return query(lson,findl,m)+query(rson,m+1,findr);    //特判：要找的区间贯穿左右子树
+        else return query(lson,findl,findr);
+    }
+    else return query(rson,findl,findr);    //要找的区间在右子树上
+}
+</code></pre>
+<p>主程序如下</p>
+<blockquote>
+<p>题目数据到了long long，所以主程序被我改了改</p>
+</blockquote>
+<pre><code class="lang-cpp">#include &lt;iostream&gt;
+
+using namespace std;
+
+#define root 1,n,1
+#define lson l,m,rt*2
+#define rson m+1,r,rt*2+1
+#define now_node l,r,rt
+
+const int maxn=100005;
+long long m,n,z[maxn*4]={0},flag[maxn*4]={0};
+
+void update(int rt)
+{
+    z[rt] = z[rt*2] + z[rt*2+1];    //我们的线段是处理区间和的，所以我们写了“+”；
+}
+
+void build(int l, int r,int rt) //建立一棵线段树
+{
+    if(l == r)        //当左端点=右端点时，就表示它是一个叶子节点，这时我们就给它赋值
+    {
+        int v;
+        cin&gt;&gt;v;
+        z[rt]=v;
+        return;
+    }
+    int m=(l+r)/2;        //二分当前区间
+    build(lson);        //左边一段作为左子树，递归建立左子树
+    build(rson);        //右边一段作为右子树，递归建立右子树
+    update(rt);        //将左右子树的修改应用于当前节点
+}
+
+void add(int l,int r,int rt,int v)      //给l～r 编号为rt的区间加上v，同时打标记
+{
+    z[rt] += (r-l+1) * v;
+    flag[rt] += v;               //给它打一个v，为避免覆盖，这里是+=
+}
+
+void push_down(int l,int r,int rt)      //在询问时，把标记下放
+{
+    if(flag[rt] != 0)
+    {
+        int m=(l+r)/2;
+        add(lson,flag[rt]);  //打左儿子
+        add(rson,flag[rt]);  //打右儿子 233
+        flag[rt]=0;       //标记清零
+    }
+}
+
+void modify(int l,int r,int rt,int findl,int findr,long long v) //修改findl~findr区间的值，把它们都加上v
+{
+    if(findl==l &amp;&amp; r==findr)             //将区间的修改应用于它的每一个子节点
+    {
+        add(now_node,v);
+        return;
+    }
+    push_down(now_node);
+    int m=(l+r)/2;            //二分当前区间
+    if(findl&lt;=m)            //要修改的区间在左子树上
+    {
+        if(m&lt;findr)        //特判：要改的区间贯穿左右子树
+        {
+            modify(lson,findl,m,v);        //在左子树上改findl~m这段
+            modify(rson,m+1,findr,v);    //在右子树上改m+1~findr这段
+        }
+        else modify(lson,findl,findr,v);
+    }
+    else modify(rson,findl,findr,v);        //要找的区间在右子树上
+    update(rt);
+}
+
+long long query(int l,int r,int rt,int findl,int findr)        //询问某段区间的和 findl表示要询问的区间的左端点，findr表示要询问的区间的右端点
+{
+    if(findl==l &amp;&amp; r==findr) return z[rt];        //当前端点等于要找的端点时 返回
+    push_down(now_node);
+    int m=(l+r)/2;            //二分当前区间
+    if(findl&lt;=m)            //要找的区间在左子树上
+    {
+        if(m&lt;findr) return query(lson,findl,m)+query(rson,m+1,findr);    //特判：要找的区间贯穿左右子树
+        else return query(lson,findl,findr);
+    }
+    else return query(rson,findl,findr);    //要找的区间在右子树上
+}
+
+int main()
+{
+    cin&gt;&gt;n&gt;&gt;m;           //线段树区间的长度为n，有次操作
+    build(root);         //从根结点开始建立线段树
+
+    for(int i=1;i&lt;=m;i++)
+    {
+        int cmd;
+        cin&gt;&gt;cmd;
+        switch(cmd)
+        {
+            case 1:            //修改线段树节点值
+            int findl,findr;
+            long long v;
+            cin&gt;&gt;findl&gt;&gt;findr&gt;&gt;v;
+            modify(root,findl,findr,v);     //从根结点递归修改
+            break;
+
+            case 2:            //询问线段树l~r区间的和
+            int l,r;
+            cin&gt;&gt;l&gt;&gt;r;
+            long long re=query(root,l,r);
+            cout&lt;&lt;re&lt;&lt;endl;
+            break;
+        }
+    }
+    return 0;
+}
+</code></pre>
+<p>然后我们就A了。。。</p>
+
+        
+                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
+                    <p><strong>
+                         
+                            This blog is under a <a href="/creativecommons.html" target="_blank">CC BY-NC-SA 3.0 Unported License</a>
+                        </strong>
+                        <br>
+                        <strong>本文链接：</strong><a href="https://blog.liuzhe.site/articles/2018/08/线段树小记/">https://blog.liuzhe.site/articles/2018/08/线段树小记/</a>
+                    </p>
+                </blockquote>
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <div id="comment" style='padding:10px;' class="vcomment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    var GUEST_INFO = ['nick','mail','link'];
+    var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+        return GUEST_INFO.indexOf(item) > -1
+    });
+    var notify = 'false' === 'true';
+    var verify = 'true' === 'true';
+    new Valine({
+        el: '.vcomment',
+        notify: notify,
+        verify: verify,
+        appId: "gocYCJk4cAlwaWI9tryhxwCU-gzGzoHsz",
+        appKey: "oSEdaIVrp0b7kMDuQdGQB0G1",
+        placeholder: "输入吧～～ qwq",
+        pageSize:'10',
+        avatar:'identicon',
+        lang:'zh-cn',
+        guest_info: guest_info
+    });
+</script>
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/articles/2018/08/最短路Floyd/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/articles/2018/08/最大公约数算法/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/me.jpg" alt="Liu Zhe's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        liuzhe7227@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: liuzhe7227@qq.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">26</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">2</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about" title="关于我">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于我
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links" title="友链">
+                
+                    <i class="material-icons sidebar-material-icons">link</i>
+                
+                友链
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/tags" title="标签">
+                
+                    <i class="material-icons sidebar-material-icons">label</i>
+                
+                标签
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/liu-zhe" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/liuzhe-88/activities" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+        <a href="https://space.bilibili.com/430434715" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-bilibili">
+                <span class="visuallyhidden">Bilibili</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;Liu Zhe's Blog
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 0000;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+    
+</html>
