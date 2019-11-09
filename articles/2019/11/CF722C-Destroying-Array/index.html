@@ -53,7 +53,7 @@
     
     <title>
         
-            [SDOI2009]HH的项链题解 | 
+            CF722C-Destroying-Array题解 | 
         
         Liu Zhe&#39;s Blog
     </title>
@@ -64,8 +64,8 @@
     <link rel="manifest" href="/manifest.json">
 
     <meta name="format-detection" content="telephone=no">
-    <meta name="description" itemprop="description" content="离线+树状数组维护">
-    <meta name="keywords" content=",树状数组">
+    <meta name="description" itemprop="description" content="本以为是琴声敲碎了月亮，定睛一看，却是湖面泛起的波纹。">
+    <meta name="keywords" content=",并查集">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -231,7 +231,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Liu Zhe&#39;s Blog">
-    <meta name="msapplication-starturl" content="https://blog.liuzhe.site/articles/2019/11/SDOI2009-HH的项链题解/">
+    <meta name="msapplication-starturl" content="https://blog.liuzhe.site/articles/2019/11/CF722C-Destroying-Array/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Liu Zhe&#39;s Blog">
@@ -246,16 +246,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://blog.liuzhe.site/articles/2019/11/SDOI2009-HH的项链题解/">
+    <meta property="og:url" content="https://blog.liuzhe.site/articles/2019/11/CF722C-Destroying-Array/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="[SDOI2009]HH的项链题解 | Liu Zhe&#39;s Blog">
+    <meta property="og:title" content="CF722C-Destroying-Array题解 | Liu Zhe&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png">
-    <meta property="og:description" content="离线+树状数组维护">
-    <meta property="og:article:tag" content="树状数组"> 
+    <meta property="og:description" content="本以为是琴声敲碎了月亮，定睛一看，却是湖面泛起的波纹。">
+    <meta property="og:article:tag" content="并查集"> 
 
     
-        <meta property="article:published_time" content="Wed Nov 06 2019 15:58:35 GMT+0800">
-        <meta property="article:modified_time" content="Wed Nov 06 2019 16:00:24 GMT+0800">
+        <meta property="article:published_time" content="Sat Nov 09 2019 10:33:27 GMT+0800">
+        <meta property="article:modified_time" content="Sat Nov 09 2019 10:37:32 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -263,7 +263,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://blog.liuzhe.site/articles/2019/11/SDOI2009-HH的项链题解/index.html">
+        <link rel="canonical" href="https://blog.liuzhe.site/articles/2019/11/CF722C-Destroying-Array/index.html">
     
 
     <!-- Structured-data for SEO -->
@@ -275,10 +275,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "https://blog.liuzhe.site/articles/2019/11/SDOI2009-HH的项链题解/index.html",
-    "headline": "[SDOI2009]HH的项链题解",
-    "datePublished": "Wed Nov 06 2019 15:58:35 GMT+0800",
-    "dateModified": "Wed Nov 06 2019 16:00:24 GMT+0800",
+    "mainEntityOfPage": "https://blog.liuzhe.site/articles/2019/11/CF722C-Destroying-Array/index.html",
+    "headline": "CF722C-Destroying-Array题解",
+    "datePublished": "Sat Nov 09 2019 10:33:27 GMT+0800",
+    "dateModified": "Sat Nov 09 2019 10:37:32 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Liu Zhe",
@@ -296,8 +296,8 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",树状数组",
-    "description": "离线+树状数组维护",
+    "keywords": ",并查集",
+    "description": "本以为是琴声敲碎了月亮，定睛一看，却是湖面泛起的波纹。",
 }
 </script>
 
@@ -362,7 +362,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#题面"><span class="post-toc-number">1.</span> <span class="post-toc-text">题面</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目描述"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">题目描述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#输入格式"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">输入格式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#输出格式"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">输出格式</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#题解"><span class="post-toc-number">2.</span> <span class="post-toc-text">题解</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#代码"><span class="post-toc-number">3.</span> <span class="post-toc-text">代码</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#题目描述"><span class="post-toc-number">1.</span> <span class="post-toc-text">题目描述</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#以下内容来自bing翻译"><span class="post-toc-number">2.</span> <span class="post-toc-text">以下内容来自bing翻译</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#题解"><span class="post-toc-number">3.</span> <span class="post-toc-text">题解</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#代码"><span class="post-toc-number">4.</span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#finish"><span class="post-toc-number">5.</span> <span class="post-toc-text">$finish$</span></a></li></ol>
     </ul>
     
 
@@ -394,7 +394,7 @@
         
     
             <p class="article-headline-p">
-                [SDOI2009]HH的项链题解
+                CF722C-Destroying-Array题解
             </p>
         </div>
 
@@ -413,7 +413,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Liu Zhe</strong>
-        <span>11月 06, 2019</span>
+        <span>11月 09, 2019</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -437,7 +437,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/树状数组/">树状数组</a>
+        <a class="post_tag-link" href="/tags/并查集/">并查集</a>
     </ul>
     
 
@@ -465,7 +465,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=[SDOI2009]HH的项链题解&url=https://blog.liuzhe.site/articles/2019/11/SDOI2009-HH的项链题解/index.html&pic=https://blog.liuzhe.site/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=CF722C-Destroying-Array题解&url=https://blog.liuzhe.site/articles/2019/11/CF722C-Destroying-Array/index.html&pic=https://blog.liuzhe.site/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -474,7 +474,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=[SDOI2009]HH的项链题解&url=https://blog.liuzhe.site/articles/2019/11/SDOI2009-HH的项链题解/index.html&via=Liu Zhe" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=CF722C-Destroying-Array题解&url=https://blog.liuzhe.site/articles/2019/11/CF722C-Destroying-Array/index.html&via=Liu Zhe" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -483,7 +483,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.liuzhe.site/articles/2019/11/SDOI2009-HH的项链题解/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.liuzhe.site/articles/2019/11/CF722C-Destroying-Array/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -492,7 +492,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://blog.liuzhe.site/articles/2019/11/SDOI2009-HH的项链题解/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://blog.liuzhe.site/articles/2019/11/CF722C-Destroying-Array/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -501,7 +501,7 @@
 
     <!-- Share LinkedIn -->
     
-        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://blog.liuzhe.site/articles/2019/11/SDOI2009-HH的项链题解/index.html&title=[SDOI2009]HH的项链题解" target="_blank">
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://blog.liuzhe.site/articles/2019/11/CF722C-Destroying-Array/index.html&title=CF722C-Destroying-Array题解" target="_blank">
             <li class="mdl-menu__item">
                 分享到 LinkedIn
             </li>
@@ -510,7 +510,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Liu Zhe&#39;s Blog&title=[SDOI2009]HH的项链题解&summary=本以为是琴声敲碎了月亮，定睛一看，却是湖面泛起的波纹。&pics=https://blog.liuzhe.site/img/favicon.png&url=https://blog.liuzhe.site/articles/2019/11/SDOI2009-HH的项链题解/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Liu Zhe&#39;s Blog&title=CF722C-Destroying-Array题解&summary=本以为是琴声敲碎了月亮，定睛一看，却是湖面泛起的波纹。&pics=https://blog.liuzhe.site/img/favicon.png&url=https://blog.liuzhe.site/articles/2019/11/CF722C-Destroying-Array/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -519,7 +519,7 @@
 
     <!-- Share Telegram -->
     
-        <a class="post_share-link" href="https://telegram.me/share/url?url=https://blog.liuzhe.site/articles/2019/11/SDOI2009-HH的项链题解/index.html&text=[SDOI2009]HH的项链题解" target="_blank">
+        <a class="post_share-link" href="https://telegram.me/share/url?url=https://blog.liuzhe.site/articles/2019/11/CF722C-Destroying-Array/index.html&text=CF722C-Destroying-Array题解" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Telegram
             </li>
@@ -535,106 +535,87 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>离线+树状数组维护</p>
-<a id="more"></a>
-<h3 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h3><p><a href="https://luogu.org/problem/P1972" target="_blank" rel="noopener">洛谷链接</a></p>
-<h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>HH 有一串由各种漂亮的贝壳组成的项链。HH 相信不同的贝壳会带来好运，所以每次散步完后，他都会随意取出一段贝壳，思考它们所表达的含义。HH 不断地收集新的贝壳，因此，他的项链变得越来越长。有一天，他突然提出了一个问题：某一段贝壳中，包含了多少种不同的贝壳？这个问题很难回答……因为项链实在是太长了。于是，他只好求助睿智的你，来解决这个问题。</p>
-<h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行：一个整数N，表示项链的长度。</p>
-<p>第二行：N 个整数，表示依次表示项链中贝壳的编号（编号为0 到1000000 之间的整数）。</p>
-<p>第三行：一个整数M，表示HH 询问的个数。</p>
-<p>接下来M 行：每行两个整数，L 和R（1 ≤ L ≤ R ≤ N），表示询问的区间。</p>
-<h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>M 行，每行一个整数，依次表示询问对应的答案。</p>
-<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p><del>这题似乎可以用莫队？？？不过我不会QAQ</del></p>
-<p>思路大致是这样的:</p>
-<p>树状数组维护一个前缀和<code>f[i]</code>,代表从第一个位置到$i$个位置有多少个不同的数。</p>
-<p>于是发现区间不同的值不好维护，我们可以把它离线下来。</p>
-<p>我们按询问区间的右端点从小到大排序，之后从第一个数据开始处理。一旦后面的值和前面的值相同，那么在询问包含这个数的区间的时候，后面的值完全可以把前面的值替换掉。</p>
-<p>例如</p>
-<p><code>1 2 1 4 3 5</code></p>
-<ol>
-<li>在第1位插入<code>1</code>(表示第一位有一个不一样的数)，标记<code>1</code></li>
-<li>在第2位插入<code>1</code>，标记<code>2</code></li>
-<li>在第3位插入<code>1</code>，发现已被标记，于是清除第一位的<code>1</code></li>
-<li>询问1~3，<code>sum(3) - sum(0)</code></li>
-</ol>
-<p>因为我们询问的区间已按右端点排过序，所以询问的区间不管包不包含已删掉的元素，答案都只被最后一个相同的元素影响。</p>
-<p>有点啰嗦了，感性理解一下吧。</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre><code class="lang-cpp">#include &lt;bits/stdc++.h&gt;
+        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p><a href="https://codeforces.com/contest/722/problem/C" target="_blank" rel="noopener">点我传送</a></p>
+<div><p>You are given an array consisting of <span class="tex-span"><i>n</i></span> non-negative integers <span class="tex-span"><i>a</i><sub class="lower-index">1</sub>, <i>a</i><sub class="lower-index">2</sub>, ..., <i>a</i><sub class="lower-index"><i>n</i></sub></span>.</p><p>You are going to destroy integers in the array one by one. Thus, you are given the permutation of integers from <span class="tex-span">1</span> to <span class="tex-span"><i>n</i></span> defining the order elements of the array are destroyed.</p><p>After each element is destroyed you have to find out the segment of the array, such that it contains no destroyed elements and the sum of its elements is maximum possible. The sum of elements in the empty segment is considered to be <span class="tex-span">0</span>.</p></div><div class="input-specification"><div class="section-title">Input</div><p>The first line of the input contains a single integer <span class="tex-span"><i>n</i></span> (<span class="tex-span">1 ≤ <i>n</i> ≤ 100 000</span>)&nbsp;— the length of the array.</p><p>The second line contains <span class="tex-span"><i>n</i></span> integers <span class="tex-span"><i>a</i><sub class="lower-index">1</sub>, <i>a</i><sub class="lower-index">2</sub>, ..., <i>a</i><sub class="lower-index"><i>n</i></sub></span> (<span class="tex-span">0 ≤ <i>a</i><sub class="lower-index"><i>i</i></sub> ≤ 10<sup class="upper-index">9</sup></span>). </p><p>The third line contains a permutation of integers from <span class="tex-span">1</span> to <span class="tex-span"><i>n</i></span>&nbsp;— the order used to destroy elements.</p></div><div class="output-specification"><div class="section-title">Output</div><p>Print <span class="tex-span"><i>n</i></span> lines. The <span class="tex-span"><i>i</i></span>-th line should contain a single integer&nbsp;— the maximum possible sum of elements on the segment containing no destroyed elements, after first <span class="tex-span"><i>i</i></span> operations are performed.</p></div><div class="sample-tests"><div class="section-title">Note</div><p>Consider the first sample: </p><ol> <li> Third element is destroyed. Array is now <span class="tex-span">1&nbsp;3&nbsp; * &nbsp;5</span>. Segment with maximum sum <span class="tex-span">5</span> consists of one integer <span class="tex-span">5</span>. </li><li> Fourth element is destroyed. Array is now <span class="tex-span">1&nbsp;3&nbsp; * &nbsp; * </span>. Segment with maximum sum <span class="tex-span">4</span> consists of two integers <span class="tex-span">1&nbsp;3</span>. </li><li> First element is destroyed. Array is now <span class="tex-span"> * &nbsp;3&nbsp; * &nbsp; * </span>. Segment with maximum sum <span class="tex-span">3</span> consists of one integer <span class="tex-span">3</span>. </li><li> Last element is destroyed. At this moment there are no valid nonempty segments left in this array, so the answer is equal to <span class="tex-span">0</span>. </li></ol></div>
 
-#define endl &#39;\n&#39;
-#define R register
-#define lowbit(x) x &amp; -x
-using std::cin;
-using std::cout;
+<h3 id="以下内容来自bing翻译"><a href="#以下内容来自bing翻译" class="headerlink" title="以下内容来自bing翻译"></a>以下内容来自bing翻译</h3><p>‎您得到一个由‎‎n‎‎个非负整数组成的数组‎a1‎，a‎2‎，…， ‎n.<br>‎您将逐个销毁数组中的整数。因此，将为您提供从‎‎1‎‎到‎‎n‎‎的整数排列，定义数组的顺序元素将被销毁。‎<br>‎销毁每个元素后，您必须找出数组的段，以便它不包含任何已销毁的元素，并且其元素的总和是尽可能可能的。空段中的元素之和被视为‎‎0‎‎。</p>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>正着做不好处理，那我们考虑倒着处理。</p>
+<p>我们先假定这个序列是空的，之后每次把摧毁的数倒着加入序列，同时把它左右两边的数与它合并，顺便求一个$\max$，最后倒序输出答案便可。</p>
+<p>用并查集实现。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre><code class="lang-cpp">#include &lt;iostream&gt;
+#include &lt;stack&gt;
+using namespace std;
 
-const int maxn = 1000005;
-int a[maxn], b[maxn], n;
-int next = 1, vis[maxn], ans[maxn], m;
+const int maxn = 100005;
+int n, m, a[maxn], broken[maxn], fa[maxn];
+long long sum[maxn];
+bool tag[maxn];
 
-inline void add(int pos, int x)
+stack&lt;long long&gt; ans; //记录答案，因为是倒序输出，用栈可以方便点
+
+int find(int x) //并查集
 {
-    for (R int i = pos; i &lt;= n; i += lowbit(i))
-        a[i] += x;
+    if (fa[x] == x)
+        return x;
+    return fa[x] = find(fa[x]);
 }
-
-inline int sum(int pos)
-{
-    int ans = 0;
-    for (R int i = pos; i &gt; 0; i -= lowbit(i))
-        ans += a[i];
-    return ans;
-}
-
-struct ask
-{
-    int l, r, pos;
-    bool operator&lt;(const ask &amp;b) const
-    {
-        return r &lt; b.r;
-    }
-} q[maxn];
 
 int main()
 {
-    std::ios::sync_with_stdio(false);
+    ios::sync_with_stdio(false);
     cin.tie(0);
     cout.tie(0);
 
     cin &gt;&gt; n;
 
-    for (R int i = 1; i &lt;= n; i++)
-        cin &gt;&gt; b[i];
-
-    cin &gt;&gt; m;
-
-    for (R int i = 1; i &lt;= m; i++)
+    for (register int i = 1; i &lt;= n; i++)
     {
-        cin &gt;&gt; q[i].l &gt;&gt; q[i].r;
-        q[i].pos = i; //记录这个询问的位置
+        fa[i] = i;
+        cin &gt;&gt; a[i];
+        sum[i] = a[i];    //初始每个节点是独立的
     }
 
-    std::sort(q + 1, q + m + 1);
+    for (register int i = 1; i &lt;= n; i++)
+        cin &gt;&gt; broken[i]; //被摧毁的数
 
-    for (R int i = 1; i &lt;= m; i++)
+    ans.push(0);  //一开始序列是0
+    long long cnt = 0;
+    for (register int i = n; i &gt; 1; i--)
     {
-        for (R int j = next; j &lt;= q[i].r; j++)
+        int now = broken[i], fnow = find(now);
+        tag[broken[i]] = true;    //这个元素被加入了序列
+        if (now &gt; 1 and tag[now - 1])  //判断左端点
         {
-            if (vis[b[j]])
-                add(vis[b[j]], -1);  //打上-1是清零：1 + (-1)=0
-            vis[b[j]] = j;
-            add(j, 1);
+            int fz = find(now - 1);   //并查集合并
+            if (fz != fnow)
+            {
+                sum[now] += sum[fz];  //合并
+                sum[fz] = 0;  //清零
+                fa[fz] = now;
+            }
         }
-        ans[q[i].pos] = sum(q[i].r) - sum(q[i].l - 1); //离线计算答案
-        next =    q[i].r + 1;
+        if (now &lt; n and tag[now + 1])  //判断右端点
+        {
+            int fz = find(now + 1);  //并查集合并
+            if (fz != fnow)
+            {
+                sum[now] += sum[fz]; //合并
+                sum[fz] = 0;  //清零
+                fa[fz] = now;
+            }
+        }
+        cnt = max(cnt, sum[now]);  //取最大值
+        ans.push(cnt);
     }
-
-    for (R int i = 1; i &lt;= m; i++)
-        cout &lt;&lt; ans[i] &lt;&lt; endl;
-
+    while (n--)  //倒序输出答案
+    {
+        cout &lt;&lt; ans.top() &lt;&lt; endl;
+        ans.pop();
+    }
     return 0;
 }
 </code></pre>
-
+<h3 id="finish"><a href="#finish" class="headerlink" title="$finish$"></a>$finish$</h3>
         
                 <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
                     <p><strong>
@@ -642,7 +623,7 @@ int main()
                             This blog is under a <a href="/creativecommons.html" target="_blank">CC BY-NC-SA 3.0 Unported License</a>
                         </strong>
                         <br>
-                        <strong>本文链接：</strong><a href="https://blog.liuzhe.site/articles/2019/11/SDOI2009-HH的项链题解/">https://blog.liuzhe.site/articles/2019/11/SDOI2009-HH的项链题解/</a>
+                        <strong>本文链接：</strong><a href="https://blog.liuzhe.site/articles/2019/11/CF722C-Destroying-Array/">https://blog.liuzhe.site/articles/2019/11/CF722C-Destroying-Array/</a>
                     </p>
                 </blockquote>
         
@@ -689,21 +670,13 @@ int main()
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/articles/2019/11/二分图染色小记/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/articles/2019/11/快速幂学习笔记/" id="post_nav-older" class="next-content">
+        <a href="/articles/2019/11/二分图染色小记/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
