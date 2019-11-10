@@ -149,21 +149,21 @@
   }
 
   .toTop {
-    background: #ff7f27 !important;
+    background: #ff4181 !important;
   }
 
   .material-layout .material-post>.material-nav,
   .material-layout .material-index>.material-nav,
   .material-nav a {
-    color: #ff7f27;
+    color: #ff4181;
   }
 
   #scheme-Paradox .MD-burger-layer {
-    background-color: #ff7f27;
+    background-color: #ff4181;
   }
 
   #scheme-Paradox #post-toc-trigger-btn {
-    color: #ff7f27;
+    color: #ff4181;
   }
 
   .post-toc a:hover {
@@ -778,7 +778,7 @@ int main()
 <aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
     <div id="sidebar-main">
         <!-- Sidebar Header -->
-        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+        <div class="sidebar-header header-cover" style="background-image: url(https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&amp;quality=100&amp;size=b4000_4000&amp;sec=1571213996&amp;di=ba32285fd09caaf3b73fbc133cbb4ccb&amp;src=http://i2.hdslb.com/bfs/archive/75a2b27fdf47f141a8f20f24c60fa06f66ce163a.jpg);">
     <!-- Top bar -->
     <div class="top-bar"></div>
 
@@ -939,6 +939,12 @@ It will not impact the appearance and can give developers a lot of support :)
 
     <!-- Sidebar Image -->
     
+    <span id="footer-image">
+        <a href="https://www.upyun.com/" target="_blank" title="upyun_logo">
+            <img src="/img/upyun_logo.svg" alt="upyun_logo"><!--
+     --></a>
+    </span>
+
 
 </aside>
 
@@ -1203,6 +1209,21 @@ console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viose
 
                 </main>
             </div>
-        </body>
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
     
 </html>

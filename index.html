@@ -144,21 +144,21 @@
   }
 
   .toTop {
-    background: #ff7f27 !important;
+    background: #ff4181 !important;
   }
 
   .material-layout .material-post>.material-nav,
   .material-layout .material-index>.material-nav,
   .material-nav a {
-    color: #ff7f27;
+    color: #ff4181;
   }
 
   #scheme-Paradox .MD-burger-layer {
-    background-color: #ff7f27;
+    background-color: #ff4181;
   }
 
   #scheme-Paradox #post-toc-trigger-btn {
-    color: #ff7f27;
+    color: #ff4181;
   }
 
   .post-toc a:hover {
@@ -325,7 +325,7 @@
 <div class="mdl-card mdl-shadow--2dp daily-pic mdl-cell mdl-cell--8-col index-top-block">
 
     <!-- Pic & Slogan -->
-    <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&amp;quality=100&amp;size=b4000_4000&amp;sec=1571213996&amp;di=ba32285fd09caaf3b73fbc133cbb4ccb&amp;src=http://i2.hdslb.com/bfs/archive/75a2b27fdf47f141a8f20f24c60fa06f66ce163a.jpg)">
+    <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/daily_pic.jpg)">
         <p class="index-top-block-slogan"><a href="#">
         
             
@@ -352,23 +352,22 @@
 
     <!-- Search -->
     
-    <!-- Google -->
+
+
+
+
+    <!-- Local -->
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable" method="post" action="">
         <label id="search-label" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent mdl-shadow--4dp" for="search">
             <i class="material-icons mdl-color-text--white" role="presentation">search</i>
         </label>
 
-        <form autocomplete="off" id="search-form" method="get" action="//google.com/search" accept-charset="UTF-8" class="mdl-textfield__expandable-holder" target="_blank">
-            <input class="mdl-textfield__input search-input" type="search" name="q" id="search" placeholder="">
+        <form autocomplete="off" id="search-form" class="mdl-textfield__expandable-holder">
+            <input type="text" id="search" class="form-control mdl-textfield__input search-input" name="q" results="0" placeholder=""/>
             <label id="search-form-label" class="mdl-textfield__label" for="search"></label>
-
-            <input type="hidden" name="sitesearch" value="https://blog.liuzhe.site">
         </form>
     </div>
-
-
-
-
+    <div id="local-search-result"></div>
 
 
 
@@ -985,7 +984,7 @@
 <aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
     <div id="sidebar-main">
         <!-- Sidebar Header -->
-        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+        <div class="sidebar-header header-cover" style="background-image: url(https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&amp;quality=100&amp;size=b4000_4000&amp;sec=1571213996&amp;di=ba32285fd09caaf3b73fbc133cbb4ccb&amp;src=http://i2.hdslb.com/bfs/archive/75a2b27fdf47f141a8f20f24c60fa06f66ce163a.jpg);">
     <!-- Top bar -->
     <div class="top-bar"></div>
 
@@ -1146,6 +1145,12 @@ It will not impact the appearance and can give developers a lot of support :)
 
     <!-- Sidebar Image -->
     
+    <span id="footer-image">
+        <a href="https://www.upyun.com/" target="_blank" title="upyun_logo">
+            <img src="/img/upyun_logo.svg" alt="upyun_logo"><!--
+     --></a>
+    </span>
+
 
 </aside>
 
@@ -1306,6 +1311,25 @@ It will not impact the appearance and can give developers a lot of support :)
 
     <!-- Local Search-->
     
+        <script type="text/ls-javascript" id="search-local-js-script">
+    var searchFunc=function(c,a,b){$.ajax({url:c,dataType:"xml",success:function(e){var d=$("entry",e).map(function(){return{title:$("title",this).text(),content:$("content",this).text(),url:$("url",this).text()}}).get();var g=document.getElementById(a);var f=document.getElementById(b);g.addEventListener("input",function(){var i='<ul class="search-result-list">';var h=this.value.trim().toLowerCase().split(/[\s\-]+/);f.innerHTML="";if(this.value.trim().length<=0){return}d.forEach(function(o){var n=true;var s=[];var t=o.title.trim().toLowerCase();var m=o.content.trim().replace(/<[^>]+>/g,"").toLowerCase();var j=o.url;var u=-1;var q=-1;var p=-1;if(t!==""&&m!==""){h.forEach(function(w,x){u=t.indexOf(w);q=m.indexOf(w);if(u<0&&q<0){n=false}else{if(q<0){q=0}if(x===0){p=q}}})}if(n){i+='<li><a href="'+j+'" class="search-result-title" target="_blank">'+t;var r=o.content.trim().replace(/<[^>]+>/g,"");if(p>=0){var k=p-6;var l=p+6;if(k<0){k=0}if(k===0){l=10}if(l>r.length){l=r.length}var v=r.substr(k,l);h.forEach(function(w){var x=new RegExp(w,"gi");v=v.replace(x,'<em class="search-keyword">'+w+"</em>")});i+='<p class="search-result">'+v+"...</p></a>"}}});f.innerHTML=i})}})};
+</script>
+
+
+        <script type="text/ls-javascript" id="search-input-script">
+            var inputArea = document.querySelector('#search');
+            var getSearchFile = function() {
+                var path = 'search.xml';
+                searchFunc(path, 'search', 'local-search-result');
+            }
+
+            if(inputArea) {
+                inputArea.onfocus = function() {
+                    getSearchFile();
+                }
+            }
+        </script>
+    
 
 
 <!-- UC Browser Compatible -->
@@ -1387,6 +1411,21 @@ console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viose
 
                 </main>
             </div>
-        </body>
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
     
 </html>
