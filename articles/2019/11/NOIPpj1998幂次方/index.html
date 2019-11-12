@@ -53,7 +53,7 @@
     
     <title>
         
-            CF135B-Rectangle-and-Square题解 | 
+            NOIPpj1998幂次方 | 
         
         Liu Zhe&#39;s Blog
     </title>
@@ -64,8 +64,8 @@
     <link rel="manifest" href="/manifest.json">
 
     <meta name="format-detection" content="telephone=no">
-    <meta name="description" itemprop="description" content="暴力枚举，一道水灰">
-    <meta name="keywords" content=",枚举">
+    <meta name="description" itemprop="description" content>
+    <meta name="keywords" content=",分治">
     <meta name="theme-color" content="#3f51b5">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -231,7 +231,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Liu Zhe&#39;s Blog">
-    <meta name="msapplication-starturl" content="https://blog.liuzhe.site/articles/2019/10/CF135B-Rectangle-and-Square题解/">
+    <meta name="msapplication-starturl" content="https://blog.liuzhe.site/articles/2019/11/NOIPpj1998幂次方/">
     <meta name="msapplication-navbutton-color" content="#3f51b5">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Liu Zhe&#39;s Blog">
@@ -246,16 +246,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://blog.liuzhe.site/articles/2019/10/CF135B-Rectangle-and-Square题解/">
+    <meta property="og:url" content="https://blog.liuzhe.site/articles/2019/11/NOIPpj1998幂次方/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="CF135B-Rectangle-and-Square题解 | Liu Zhe&#39;s Blog">
+    <meta property="og:title" content="NOIPpj1998幂次方 | Liu Zhe&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png">
-    <meta property="og:description" content="暴力枚举，一道水灰">
-    <meta property="og:article:tag" content="枚举"> 
+    <meta property="og:description" content>
+    <meta property="og:article:tag" content="分治"> 
 
     
-        <meta property="article:published_time" content="Tue Oct 29 2019 20:52:43 GMT+0800">
-        <meta property="article:modified_time" content="Tue Oct 29 2019 21:03:56 GMT+0800">
+        <meta property="article:published_time" content="Tue Nov 12 2019 08:02:15 GMT+0800">
+        <meta property="article:modified_time" content="Tue Nov 12 2019 08:04:54 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -263,7 +263,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://blog.liuzhe.site/articles/2019/10/CF135B-Rectangle-and-Square题解/index.html">
+        <link rel="canonical" href="https://blog.liuzhe.site/articles/2019/11/NOIPpj1998幂次方/index.html">
     
 
     <!-- Structured-data for SEO -->
@@ -275,10 +275,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "https://blog.liuzhe.site/articles/2019/10/CF135B-Rectangle-and-Square题解/index.html",
-    "headline": "CF135B-Rectangle-and-Square题解",
-    "datePublished": "Tue Oct 29 2019 20:52:43 GMT+0800",
-    "dateModified": "Tue Oct 29 2019 21:03:56 GMT+0800",
+    "mainEntityOfPage": "https://blog.liuzhe.site/articles/2019/11/NOIPpj1998幂次方/index.html",
+    "headline": "NOIPpj1998幂次方",
+    "datePublished": "Tue Nov 12 2019 08:02:15 GMT+0800",
+    "dateModified": "Tue Nov 12 2019 08:04:54 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Liu Zhe",
@@ -296,8 +296,8 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",枚举",
-    "description": "暴力枚举，一道水灰",
+    "keywords": ",分治",
+    "description": "",
 }
 </script>
 
@@ -362,7 +362,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#题目描述"><span class="post-toc-number">1.</span> <span class="post-toc-text">题目描述</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#翻译"><span class="post-toc-number">2.</span> <span class="post-toc-text">翻译</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#题解"><span class="post-toc-number">3.</span> <span class="post-toc-text">题解</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#代码"><span class="post-toc-number">4.</span> <span class="post-toc-text">代码</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#null"><span class="post-toc-number">1.</span> <span class="post-toc-text">题目描述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#null"><span class="post-toc-number">2.</span> <span class="post-toc-text">输入格式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#null"><span class="post-toc-number">3.</span> <span class="post-toc-text">输出格式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#null"><span class="post-toc-number">4.</span> <span class="post-toc-text">输入输出样例</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#题解"><span class="post-toc-number"></span> <span class="post-toc-text">题解</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#代码"><span class="post-toc-number"></span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#end"><span class="post-toc-number"></span> <span class="post-toc-text">end</span></a>
     </ul>
     
 
@@ -394,7 +394,7 @@
         
     
             <p class="article-headline-p">
-                CF135B-Rectangle-and-Square题解
+                NOIPpj1998幂次方
             </p>
         </div>
 
@@ -413,7 +413,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Liu Zhe</strong>
-        <span>10月 29, 2019</span>
+        <span>11月 12, 2019</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -437,7 +437,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/枚举/">枚举</a>
+        <a class="post_tag-link" href="/tags/分治/">分治</a>
     </ul>
     
 
@@ -465,7 +465,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=CF135B-Rectangle-and-Square题解&url=https://blog.liuzhe.site/articles/2019/10/CF135B-Rectangle-and-Square题解/index.html&pic=https://blog.liuzhe.site/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=NOIPpj1998幂次方&url=https://blog.liuzhe.site/articles/2019/11/NOIPpj1998幂次方/index.html&pic=https://blog.liuzhe.site/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -474,7 +474,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=CF135B-Rectangle-and-Square题解&url=https://blog.liuzhe.site/articles/2019/10/CF135B-Rectangle-and-Square题解/index.html&via=Liu Zhe" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=NOIPpj1998幂次方&url=https://blog.liuzhe.site/articles/2019/11/NOIPpj1998幂次方/index.html&via=Liu Zhe" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -483,7 +483,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.liuzhe.site/articles/2019/10/CF135B-Rectangle-and-Square题解/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.liuzhe.site/articles/2019/11/NOIPpj1998幂次方/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -492,7 +492,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://blog.liuzhe.site/articles/2019/10/CF135B-Rectangle-and-Square题解/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://blog.liuzhe.site/articles/2019/11/NOIPpj1998幂次方/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -501,7 +501,7 @@
 
     <!-- Share LinkedIn -->
     
-        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://blog.liuzhe.site/articles/2019/10/CF135B-Rectangle-and-Square题解/index.html&title=CF135B-Rectangle-and-Square题解" target="_blank">
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://blog.liuzhe.site/articles/2019/11/NOIPpj1998幂次方/index.html&title=NOIPpj1998幂次方" target="_blank">
             <li class="mdl-menu__item">
                 分享到 LinkedIn
             </li>
@@ -510,7 +510,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Liu Zhe&#39;s Blog&title=CF135B-Rectangle-and-Square题解&summary=&pics=https://blog.liuzhe.site/img/favicon.png&url=https://blog.liuzhe.site/articles/2019/10/CF135B-Rectangle-and-Square题解/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Liu Zhe&#39;s Blog&title=NOIPpj1998幂次方&summary=&pics=https://blog.liuzhe.site/img/favicon.png&url=https://blog.liuzhe.site/articles/2019/11/NOIPpj1998幂次方/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -519,7 +519,7 @@
 
     <!-- Share Telegram -->
     
-        <a class="post_share-link" href="https://telegram.me/share/url?url=https://blog.liuzhe.site/articles/2019/10/CF135B-Rectangle-and-Square题解/index.html&text=CF135B-Rectangle-and-Square题解" target="_blank">
+        <a class="post_share-link" href="https://telegram.me/share/url?url=https://blog.liuzhe.site/articles/2019/11/NOIPpj1998幂次方/index.html&text=NOIPpj1998幂次方" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Telegram
             </li>
@@ -535,71 +535,79 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>暴力枚举，一道水灰</p>
-<a id="more"></a>
-<p><a href="https://www.luogu.org/problem/CF135B" target="_blank" rel="noopener">luogu链接</a></p>
-<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>Little Petya very much likes rectangles and especially squares. Recently he has received 8 points on the plane as a gift from his mother. The points are pairwise distinct. Petya decided to split them into two sets each containing 4 points so that the points from the first set lay at the vertexes of some square and the points from the second set lay at the vertexes of a rectangle. Each point of initial 8 should belong to exactly one set. It is acceptable for a rectangle from the second set was also a square. If there are several partitions, Petya will be satisfied by any of them. Help him find such partition. Note that the rectangle and the square from the partition should have non-zero areas. The sides of the figures do not have to be parallel to the coordinate axes, though it might be the case.</p>
-<p>Input<br>You are given 8 pairs of integers, a pair per line — the coordinates of the points Petya has. The absolute value of all coordinates does not exceed 104. It is guaranteed that no two points coincide.</p>
-<p>Output<br>Print in the first output line “YES” (without the quotes), if the desired partition exists. In the second line output 4 space-separated numbers — point indexes from the input, which lie at the vertexes of the square. The points are numbered starting from 1. The numbers can be printed in any order. In the third line print the indexes of points lying at the vertexes of a rectangle in the similar format. All printed numbers should be pairwise distinct.</p>
-<p>If the required partition does not exist, the first line should contain the word “NO” (without the quotes), after which no output is needed.</p>
-<h3 id="翻译"><a href="#翻译" class="headerlink" title="翻译"></a>翻译</h3><p>给你八个点，问这八个点能否恰好构成一个正方形和一个矩形。</p>
-<p>输出文件第一行是”YES”或者”NO”。表示是否有解。</p>
-<p>若有解则第二行依次输出正方形每个顶点的序号。第三行依次输出矩形每个顶点的序号。序号即为输入的顺序。</p>
-<p>第二行和第三行这八个数要字典序最小。</p>
-<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>数据范围不大，暴力枚举每个点即可 </p>
-<p>时间复杂度$O(1)$ <del>常数有点大233</del></p>
-<p><strong><em>对于矩形的判定：</em></strong></p>
-<p><del>复习初中内容（</del></p>
-<p>我们有这么一个几何图形：</p>
-<p><img src="/articles/2019/10/CF135B-Rectangle-and-Square题解/1.png" alt="1"></p>
-<p>要证明它是一个矩形，先要证明它是平行四边形，所以它的对边要相等。</p>
-<p><img src="/articles/2019/10/CF135B-Rectangle-and-Square题解/2.png" alt="2"></p>
-<p>对于一个平行四边形，我们只需要证明它的其中一个角是直角便可证明他是矩形。</p>
-<p><del>我比较菜，不会什么叉积。</del></p>
-<p>我们只需使用 <em>勾股逆定理</em> 便可</p>
-<blockquote>
-<p>如果三角形两条边的平方和等于第三边的平方，那么这个三角形就是直角三角形。最长边所对的角为直角</p>
+        <blockquote>
+<p>以下内容来自洛谷,<a href="https://www.luogu.org/problem/P1010" target="_blank" rel="noopener">P1010 幂次方</a></p>
 </blockquote>
-<p><img src="/articles/2019/10/CF135B-Rectangle-and-Square题解/3.png" alt="3"></p>
-<script type="math/tex; mode=display">a^2 + b^2 = c^2</script><p>而</p>
-<script type="math/tex; mode=display">a = (y_k - y_i)^2 + (x_k-x_i)^2</script><script type="math/tex; mode=display">b = (y_i - y_k)^2 + (x_j-x_i)^2</script><script type="math/tex; mode=display">c = (y_k - y_j)^2 + (x_k-x_j)^2</script><p>对于 <strong><em>正方形</em></strong> ，我们只需证明它是 <strong><em>临边相等</em></strong> 即可。</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre><code class="lang-cpp">#include &lt;algorithm&gt;
-#include &lt;cmath&gt;
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
+<div data-v-36666aac data-v-796309f8 data-v-af321868><!----> <h2 class="lfe-h2" data-v-af321868>题目描述</h2> <div class="marked" data-v-af321868 data-v-6156e5d2><p>任何一个正整数都可以用<span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span></span>的幂次方表示。例如</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>137</mn><mo>=</mo><msup><mn>2</mn><mn>7</mn></msup><mo>+</mo><msup><mn>2</mn><mn>3</mn></msup><mo>+</mo><msup><mn>2</mn><mn>0</mn></msup></mrow><annotation encoding="application/x-tex">137=2^7+2^3+2^0 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">3</span><span class="mord">7</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.9474379999999999em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">7</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.9474379999999999em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8641079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p>同时约定方次用括号来表示，即<span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>a</mi><mi>b</mi></msup></mrow><annotation encoding="application/x-tex">a^b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.849108em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">b</span></span></span></span></span></span></span></span></span></span></span></span> 可表示为<span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">a(b)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">a</span><span class="mopen">(</span><span class="mord mathdefault">b</span><span class="mclose">)</span></span></span></span></span>。</p>
+<p>由此可知，<span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>137</mn></mrow><annotation encoding="application/x-tex">137</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">3</span><span class="mord">7</span></span></span></span></span>可表示为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo stretchy="false">(</mo><mn>7</mn><mo stretchy="false">)</mo><mo>+</mo><mn>2</mn><mo stretchy="false">(</mo><mn>3</mn><mo stretchy="false">)</mo><mo>+</mo><mn>2</mn><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">2(7)+2(3)+2(0)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mopen">(</span><span class="mord">7</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mopen">(</span><span class="mord">3</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mopen">(</span><span class="mord">0</span><span class="mclose">)</span></span></span></span></span></p>
+<p>进一步：</p>
+<p>7= 2^2+2+2^0$$  (2^1用2表示)，并且
 
-#define n 8
-#define ix star[i].x
-#define jx star[j].x
-#define kx star[k].x
-#define lx star[l].x
-#define iy star[i].y
-#define jy star[j].y
-#define ky star[k].y
-#define ly star[l].y
-#define fors(a,c) for(register int a=1;a&lt;=c;a++)
+$$3=2+2^0</p>
+<p>所以最后<span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>137</mn></mrow><annotation encoding="application/x-tex">137</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">3</span><span class="mord">7</span></span></span></span></span>可表示为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo><mo>+</mo><mn>2</mn><mo>+</mo><mn>2</mn><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo>+</mo><mn>2</mn><mo stretchy="false">(</mo><mn>2</mn><mo>+</mo><mn>2</mn><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo>+</mo><mn>2</mn><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">2(2(2)+2+2(0))+2(2+2(0))+2(0)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mopen">(</span><span class="mord">2</span><span class="mopen">(</span><span class="mord">2</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mopen">(</span><span class="mord">0</span><span class="mclose">)</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mopen">(</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mopen">(</span><span class="mord">0</span><span class="mclose">)</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mopen">(</span><span class="mord">0</span><span class="mclose">)</span></span></span></span></span></p>
+<p>又如：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1315</mn><mo>=</mo><msup><mn>2</mn><mn>10</mn></msup><mo>+</mo><msup><mn>2</mn><mn>8</mn></msup><mo>+</mo><msup><mn>2</mn><mn>5</mn></msup><mo>+</mo><mn>2</mn><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">1315=2^{10} +2^8 +2^5 +2+1
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">3</span><span class="mord">1</span><span class="mord">5</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.9474379999999999em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">0</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.9474379999999999em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.9474379999999999em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></span></p>
+<p>所以<span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1315</mn></mrow><annotation encoding="application/x-tex">1315</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">3</span><span class="mord">1</span><span class="mord">5</span></span></span></span></span>最后可表示为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">(</mo><mn>2</mn><mo>+</mo><mn>2</mn><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo>+</mo><mn>2</mn><mo stretchy="false">)</mo><mo>+</mo><mn>2</mn><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">(</mo><mn>2</mn><mo>+</mo><mn>2</mn><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo>+</mo><mn>2</mn><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo><mo>+</mo><mn>2</mn><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo>+</mo><mn>2</mn><mo>+</mo><mn>2</mn><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">2(2(2+2(0))+2)+2(2(2+2(0)))+2(2(2)+2(0))+2+2(0)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mopen">(</span><span class="mord">2</span><span class="mopen">(</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mopen">(</span><span class="mord">0</span><span class="mclose">)</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mopen">(</span><span class="mord">2</span><span class="mopen">(</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mopen">(</span><span class="mord">0</span><span class="mclose">)</span><span class="mclose">)</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mopen">(</span><span class="mord">2</span><span class="mopen">(</span><span class="mord">2</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mopen">(</span><span class="mord">0</span><span class="mclose">)</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mopen">(</span><span class="mord">0</span><span class="mclose">)</span></span></span></span></span></p>
+</div> <h2 class="lfe-h2" data-v-af321868>输入格式</h2> <div class="marked" data-v-af321868 data-v-6156e5d2><p>一个正整数<span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo stretchy="false">(</mo><mi>n</mi><mo>≤</mo><mn>20000</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">n(n≤20000)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">n</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mclose">)</span></span></span></span></span>。</p>
+</div> <h2 class="lfe-h2" data-v-af321868>输出格式</h2> <div class="marked" data-v-af321868 data-v-6156e5d2><p>符合约定的<span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span></span>的<span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo separator="true">,</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">0,2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span></span></span></span></span>表示(在表示中不能有空格)</p>
+</div> <!----> <h2 class="lfe-h2" data-v-af321868>输入输出样例</h2> <div class="sample-wrap sample" data-v-af321868 data-v-36768c72><div class="input" data-v-36768c72 data-v-89a1e792><strong data-v-89a1e792>输入 #1</strong> <button class="copy-btn lfe-form-sz-middle" style="border-color: rgb(52, 152, 219); color: rgb(52, 152, 219); background-color: rgba(52, 152, 219, 0);" type="button" data-v-f3e1ca6a data-v-89a1e792>
+    复制
+  </button> <pre data-v-89a1e792>1315</pre></div> <div class="output" data-v-36768c72 data-v-89a1e792><strong data-v-89a1e792>输出 #1</strong> <button class="copy-btn lfe-form-sz-middle" style="border-color: rgb(52, 152, 219); color: rgb(52, 152, 219); background-color: rgba(52, 152, 219, 0);" type="button" data-v-f3e1ca6a data-v-89a1e792>
+    复制
+  </button> <pre data-v-89a1e792>2(2(2+2(0))+2)+2(2(2+2(0)))+2(2(2)+2(0))+2+2(0)</pre></div></div> <!----></div>
 
-//对边是否相等
-#define cube1 (iy - jy) ==  (ly - ky) and  (lx - ix) ==  (kx - jx)
 
-//临边是否相等
-#define cube2 pow((iy-jy),2) + pow((jx-ix),2) == pow((ly - iy),2) + pow((lx-ix),2)
-
-//四个点连成一条线是不合法的欧
-#define other  ky != jy and  jx !=  ix
-
-//是否有直角
-#define zhijiao  pow((iy-jy),2) +  pow((jx-ix),2) +  pow((ly - iy),2) +  pow((lx-ix),2) ==  pow((lx-jx),2) +  pow((ly-jy),2)
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>这是一道比较麻烦的橙题，考的是分治和数学？？。</p>
+<p>我们说现需要明确的一点是任何一个数都可以被2的幂次方表示，所以不存在无解的情况。</p>
+<p>有没有发现计算机内部也是用2的幂次方表示一个数的，所以我们可以使用二进制。<del>但我并不会。</del>所以我接下来讲的是另一种方法——</p>
+<p>首先，我们要先求出一个2的幂次方与目标数最接近，之后对他们的差和求出来的指数继续进行如上操作，直到其指数小于等于2。</p>
+<p>拿样例来举例：</p>
+<p>假如我们要求$137$:</p>
+<p>我们找到一个可以被2的幂次方表示出来的，和它最接近的数$127$，也就是$2^7$</p>
+<p>而</p>
+<script type="math/tex; mode=display">137-127=10</script><script type="math/tex; mode=display">7=2^2+2^1+2^0</script><script type="math/tex; mode=display">10=2^3+2^1</script><script type="math/tex; mode=display">2^3=2^1+2^0</script><p>所以答案为$137=2(2(2)+2+2(0))+2(2+2(0))+2(0)$</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><pre><code class="lang-cpp">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
 using namespace std;
 
-struct S
+int n;
+
+void work(int num)
 {
-    int x, y;
-} star[10];
-
-bool done, vis[10];
-
-vector&lt;int&gt; v, v1;
+    cout &lt;&lt; &quot;2&quot;;
+    int i, x = 1;
+    for (i = 0; x &lt;= num; i++) //找不大于num最大的数
+        x *= 2;
+    x /= 2; //多算了一次
+    i--;
+    if (i &gt; 2) //指数大于2不合法，递归处理
+    {
+        cout &lt;&lt; &quot;(&quot;;
+        work(i);
+        cout &lt;&lt; &quot;)&quot;;
+    }
+    else
+    {
+        if (i == 2 or i == 0)
+            cout &lt;&lt; &quot;(&quot; &lt;&lt; i &lt;&lt; &quot;)&quot;;
+    }
+    num -= x;
+    if (num) //如果还有剩余，继续处理
+    {
+        cout &lt;&lt; &quot;+&quot;;
+        work(num);
+    }
+}
 
 int main()
 {
@@ -607,86 +615,17 @@ int main()
     cin.tie(0);
     cout.tie(0);
 
-    fors(i, n)
-    cin &gt;&gt; ix &gt;&gt; iy;
+    cin &gt;&gt; n;
 
-    fors(i, n) //找正方形
-    {
-        fors(j, n)
-        {
-            fors(k, n)
-            {
-                fors(l, n)
-                {
-                    if (i == j or j == k or k == l or i == k or i == l or j == l) continue;  //判重
-                    if (cube1 and cube2 and other and zhijiao)
-                    {
-                        vis[i] = vis[j] = vis[k] = vis[l] = true; //标记点已被使用
-                        v.push_back(i), v.push_back(j), v.push_back(k), v.push_back(l);
-                        sort(v.begin(), v.end());  //暴力排序233
-                        done = 1;
-                        break;
-                    }
+    if(n == 0)  //0是无解的
+        return 0;
 
-                }
-                if (done)
-                    break;
-            }
-            if (done)
-                break;
-        }
-        if (done)
-            break;
-    }
-    if (!done) {cout &lt;&lt; &quot;NO&quot; &lt;&lt; endl; return 0;}
-    done = 0;
-    fors(i, n) //找矩形
-    {
-        if (vis[i])  //如果当前点被使用了，跳过
-            continue;
-        fors(j, n)
-        {
-            if (vis[j])
-                continue;  //如果当前点被使用了，跳过
-            fors(k, n)
-            {
-                if (vis[k])
-                    continue;  //如果当前点被使用了，跳过
-                fors(l, n)
-                {
-                    if (vis[l])  //如果当前点被使用了，跳过
-                        continue;
-                    if (i == j or j == k or k == l or i == k or i == l or j ==      l) continue; //判重
-                    if (cube1 and other and zhijiao)
-                    {
-                        v1.push_back(i), v1.push_back(j), v1.push_back(k), v1.push_back(l);
-                        sort(v1.begin(), v1.end());  //暴力排序233
-                        done = 1;
-                        break;
-                    }
-                }
-                if (done)
-                    break;
-            }
-            if (done)
-                break;
-        }
-        if (done)
-            break;
-    }
-    if (!done) {cout &lt;&lt; &quot;NO&quot; &lt;&lt; endl; return 0;}
-
-    cout &lt;&lt; &quot;YES&quot; &lt;&lt; endl;  //输出答案
-    for (int q = 0; q &lt; 4; q++)
-        cout &lt;&lt; v[q] &lt;&lt; &quot; &quot;;
-    cout &lt;&lt; endl;
-    for (int q = 0; q &lt; 4; q++)
-        cout &lt;&lt; v1[q] &lt;&lt; &quot; &quot;;
+    work(n);
 
     return 0;
 }
 </code></pre>
-
+<h1 id="end"><a href="#end" class="headerlink" title="end"></a><script type="math/tex">end</script></h1>
         
                 <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
                     <p><strong>
@@ -694,7 +633,7 @@ int main()
                             This blog is under a <a href="/creativecommons.html" target="_blank">CC BY-NC-SA 3.0 Unported License</a>
                         </strong>
                         <br>
-                        <strong>本文链接：</strong><a href="https://blog.liuzhe.site/articles/2019/10/CF135B-Rectangle-and-Square题解/">https://blog.liuzhe.site/articles/2019/10/CF135B-Rectangle-and-Square题解/</a>
+                        <strong>本文链接：</strong><a href="https://blog.liuzhe.site/articles/2019/11/NOIPpj1998幂次方/">https://blog.liuzhe.site/articles/2019/11/NOIPpj1998幂次方/</a>
                     </p>
                 </blockquote>
         
@@ -741,21 +680,13 @@ int main()
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/articles/2019/10/没有上司的舞会题解/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/articles/2019/10/欧拉筛/" id="post_nav-older" class="next-content">
+        <a href="/articles/2019/11/NOIP2003神经网络/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
