@@ -597,7 +597,7 @@
       <link href="//articles/2019/10/%E5%AF%B9%E6%8B%8D%E6%A8%A1%E6%9D%BF/"/>
       <url>//articles/2019/10/%E5%AF%B9%E6%8B%8D%E6%A8%A1%E6%9D%BF/</url>
       
-        <content type="html"><![CDATA[<p>考场不对拍，爆零两行泪。</p><p><strong>____</strong>Payphone—X</p><p>想必大家都知道什么是对拍，我就不bb了。不会的同学右转google。</p><a id="more"></a> <p>改动了 Payphone_X 同学的代码，使测试的程序可以不用写文件输入输出，即拿即用。</p><h1 id="对拍模板-Windows"><a href="#对拍模板-Windows" class="headerlink" title="对拍模板 Windows"></a>对拍模板 Windows</h1><pre><code class="lang-cpp">#include&lt;bits/stdc++.h&gt;#include&lt;windows.h&gt;#define ll long long#define I inlineusing namespace std;ll num , s , t;int main(){    while(true){        system(&quot;cls&quot;);        do{            num ++;            system(&quot;data.exe &gt; data.txt&quot;);            s = clock();            system(&quot;a.exe &lt; data.txt &gt; std.txt&quot;);            t = clock();            system(&quot;b.exe &lt; data.txt &gt; ans.txt&quot;);            if(system(&quot;fc std.txt ans.txt&quot;))                break;            else{                cout &lt;&lt; &quot;AC time&quot; &lt;&lt; &quot; &quot; &lt;&lt; t - s &lt;&lt; &quot;ms&quot; &lt;&lt; &quot;\n&quot;;                cout &lt;&lt; &quot;This is &quot; &lt;&lt; num &lt;&lt; &quot; &quot; &lt;&lt; &quot;AC&quot; &lt;&lt; &quot;\n&quot;;            }        }while(true);        cout &lt;&lt; &quot;WA time&quot; &lt;&lt; &quot; &quot; &lt;&lt; t - s &lt;&lt; &quot;ms&quot; &lt;&lt; &quot;\n&quot;;        cout &lt;&lt; &quot;This is &quot; &lt;&lt; num &lt;&lt; &quot; &quot; &lt;&lt; &quot;WA&quot; &lt;&lt; &quot;\n&quot;;        system(&quot;fc std.txt ans.txt&quot;);        system(&quot;pause &gt; nul&quot;);    }    return 0;}</code></pre><h1 id="对拍模板-Linux"><a href="#对拍模板-Linux" class="headerlink" title="对拍模板 Linux"></a>对拍模板 Linux</h1><pre><code class="lang-cpp">#include&lt;bits/stdc++.h&gt;#define ll long long#define I inlineusing namespace std;ll num , s , t;int main(){    while(true){        system(&quot;clear&quot;);        do{            num ++;            system(&quot;./data &gt; data.txt&quot;);            s = clock();            system(&quot;./a &lt; data.txt &gt; std.txt&quot;);            t = clock();            system(&quot;./b &lt; data.txt &gt; ans.txt&quot;);            if(system(&quot;diff std.txt ans.txt&quot;))                break;            else{                cout &lt;&lt; &quot;AC time&quot; &lt;&lt; &quot; &quot; &lt;&lt; t - s &lt;&lt; &quot;ms&quot; &lt;&lt; &quot;\n&quot;;                cout &lt;&lt; &quot;This is &quot; &lt;&lt; num &lt;&lt; &quot; &quot; &lt;&lt; &quot;AC&quot; &lt;&lt; &quot;\n&quot;;            }        }while(true);        cout &lt;&lt; &quot;WA time&quot; &lt;&lt; &quot; &quot; &lt;&lt; t - s &lt;&lt; &quot;ms&quot; &lt;&lt; &quot;\n&quot;;        cout &lt;&lt; &quot;This is &quot; &lt;&lt; num &lt;&lt; &quot; &quot; &lt;&lt; &quot;WA&quot; &lt;&lt; &quot;\n&quot;;        system(&quot;diff std.txt ans.txt&quot;);        cout &lt;&lt; &quot;按任意键继续&quot; &lt;&lt; &quot;\n&quot;;        getchar();    }    return 0;}</code></pre>]]></content>
+        <content type="html"><![CDATA[<p>考场不对拍，爆零两行泪。</p><p><strong>____</strong>Payphone—X</p><p>想必大家都知道什么是对拍，我就不bb了。不会的同学右转google。</p><a id="more"></a><h1 id="考场版"><a href="#考场版" class="headerlink" title="考场版"></a>考场版</h1><pre><code class="lang-cpp">#include &lt;bits/stdc++.h&gt;int main(){    while(1)    {        system(&quot;data.exe &gt; data.in&quot;);        system(&quot;std.exe &lt; data.in &gt; std.out&quot;);        system(&quot;my.exe &lt; data.in &gt; my.out&quot;);        if(system(&quot;fc my.out std.out&quot;))            system(&quot;pause&quot;);    }}</code></pre><p>以下代码，改动了 Payphone_X 同学的代码，使测试的程序可以不用写文件输入输出，即拿即用。</p><h1 id="对拍模板-Windows"><a href="#对拍模板-Windows" class="headerlink" title="对拍模板 Windows"></a>对拍模板 Windows</h1><pre><code class="lang-cpp">#include&lt;bits/stdc++.h&gt;#include&lt;windows.h&gt;#define ll long long#define I inlineusing namespace std;ll num , s , t;int main(){    while(true){        system(&quot;cls&quot;);        do{            num ++;            system(&quot;data.exe &gt; data.txt&quot;);            s = clock();            system(&quot;a.exe &lt; data.txt &gt; std.txt&quot;);            t = clock();            system(&quot;b.exe &lt; data.txt &gt; ans.txt&quot;);            if(system(&quot;fc std.txt ans.txt&quot;))                break;            else{                cout &lt;&lt; &quot;AC time&quot; &lt;&lt; &quot; &quot; &lt;&lt; t - s &lt;&lt; &quot;ms&quot; &lt;&lt; &quot;\n&quot;;                cout &lt;&lt; &quot;This is &quot; &lt;&lt; num &lt;&lt; &quot; &quot; &lt;&lt; &quot;AC&quot; &lt;&lt; &quot;\n&quot;;            }        }while(true);        cout &lt;&lt; &quot;WA time&quot; &lt;&lt; &quot; &quot; &lt;&lt; t - s &lt;&lt; &quot;ms&quot; &lt;&lt; &quot;\n&quot;;        cout &lt;&lt; &quot;This is &quot; &lt;&lt; num &lt;&lt; &quot; &quot; &lt;&lt; &quot;WA&quot; &lt;&lt; &quot;\n&quot;;        system(&quot;fc std.txt ans.txt&quot;);        system(&quot;pause &gt; nul&quot;);    }    return 0;}</code></pre><h1 id="对拍模板-Linux"><a href="#对拍模板-Linux" class="headerlink" title="对拍模板 Linux"></a>对拍模板 Linux</h1><pre><code class="lang-cpp">#include&lt;bits/stdc++.h&gt;#define ll long long#define I inlineusing namespace std;ll num , s , t;int main(){    while(true){        system(&quot;clear&quot;);        do{            num ++;            system(&quot;./data &gt; data.txt&quot;);            s = clock();            system(&quot;./a &lt; data.txt &gt; std.txt&quot;);            t = clock();            system(&quot;./b &lt; data.txt &gt; ans.txt&quot;);            if(system(&quot;diff std.txt ans.txt&quot;))                break;            else{                cout &lt;&lt; &quot;AC time&quot; &lt;&lt; &quot; &quot; &lt;&lt; t - s &lt;&lt; &quot;ms&quot; &lt;&lt; &quot;\n&quot;;                cout &lt;&lt; &quot;This is &quot; &lt;&lt; num &lt;&lt; &quot; &quot; &lt;&lt; &quot;AC&quot; &lt;&lt; &quot;\n&quot;;            }        }while(true);        cout &lt;&lt; &quot;WA time&quot; &lt;&lt; &quot; &quot; &lt;&lt; t - s &lt;&lt; &quot;ms&quot; &lt;&lt; &quot;\n&quot;;        cout &lt;&lt; &quot;This is &quot; &lt;&lt; num &lt;&lt; &quot; &quot; &lt;&lt; &quot;WA&quot; &lt;&lt; &quot;\n&quot;;        system(&quot;diff std.txt ans.txt&quot;);        cout &lt;&lt; &quot;按任意键继续&quot; &lt;&lt; &quot;\n&quot;;        getchar();    }    return 0;}</code></pre>]]></content>
       
       
       
@@ -1108,17 +1108,6 @@
     
     
     <entry>
-      <title>友链</title>
-      <link href="/links/index.html"/>
-      <url>/links/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title></title>
       <link href="/js/link.js"/>
       <url>/js/link.js</url>
@@ -1133,6 +1122,17 @@
       <title>标签</title>
       <link href="/tags/index.html"/>
       <url>/tags/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>友链</title>
+      <link href="/links/index.html"/>
+      <url>/links/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       

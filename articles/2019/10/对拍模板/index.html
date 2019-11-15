@@ -259,7 +259,7 @@ ____Payphone—X
 
     
         <meta property="article:published_time" content="Sat Oct 12 2019 20:11:37 GMT+0800">
-        <meta property="article:modified_time" content="Wed Oct 16 2019 09:22:42 GMT+0800">
+        <meta property="article:modified_time" content="Fri Nov 15 2019 16:35:02 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -282,7 +282,7 @@ ____Payphone—X
     "mainEntityOfPage": "https://blog.liuzhe.site/articles/2019/10/对拍模板/index.html",
     "headline": "对拍模板",
     "datePublished": "Sat Oct 12 2019 20:11:37 GMT+0800",
-    "dateModified": "Wed Oct 16 2019 09:22:42 GMT+0800",
+    "dateModified": "Fri Nov 15 2019 16:35:02 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Liu Zhe",
@@ -368,7 +368,7 @@ ____Payphone—X
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#对拍模板-Windows"><span class="post-toc-number">1.</span> <span class="post-toc-text">对拍模板 Windows</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#对拍模板-Linux"><span class="post-toc-number">2.</span> <span class="post-toc-text">对拍模板 Linux</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#考场版"><span class="post-toc-number">1.</span> <span class="post-toc-text">考场版</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#对拍模板-Windows"><span class="post-toc-number">2.</span> <span class="post-toc-text">对拍模板 Windows</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#对拍模板-Linux"><span class="post-toc-number">3.</span> <span class="post-toc-text">对拍模板 Linux</span></a></li></ol>
     </ul>
     
 
@@ -544,8 +544,22 @@ ____Payphone—X
         <p>考场不对拍，爆零两行泪。</p>
 <p><strong>____</strong>Payphone—X</p>
 <p>想必大家都知道什么是对拍，我就不bb了。不会的同学右转google。</p>
-<a id="more"></a> 
-<p>改动了 Payphone_X 同学的代码，使测试的程序可以不用写文件输入输出，即拿即用。</p>
+<a id="more"></a>
+<h1 id="考场版"><a href="#考场版" class="headerlink" title="考场版"></a>考场版</h1><pre><code class="lang-cpp">#include &lt;bits/stdc++.h&gt;
+
+int main()
+{
+    while(1)
+    {
+        system(&quot;data.exe &gt; data.in&quot;);
+        system(&quot;std.exe &lt; data.in &gt; std.out&quot;);
+        system(&quot;my.exe &lt; data.in &gt; my.out&quot;);
+        if(system(&quot;fc my.out std.out&quot;))
+            system(&quot;pause&quot;);
+    }
+}
+</code></pre>
+<p>以下代码，改动了 Payphone_X 同学的代码，使测试的程序可以不用写文件输入输出，即拿即用。</p>
 <h1 id="对拍模板-Windows"><a href="#对拍模板-Windows" class="headerlink" title="对拍模板 Windows"></a>对拍模板 Windows</h1><pre><code class="lang-cpp">#include&lt;bits/stdc++.h&gt;
 #include&lt;windows.h&gt;
 
@@ -1121,21 +1135,6 @@ console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viose
 
                 </main>
             </div>
-        <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</body>
+        </body>
     
 </html>
