@@ -547,7 +547,7 @@
 <p>把落单的结点也当作重链，那么整棵树就被剖分成若干条重链。</p>
 <p>看一张图就明白了</p>
 </blockquote>
-<p><img src="/articles/2019/10/树链剖分—重链剖分小记/hld.png" alt="hid"></p>
+<p><img src="/10/树链剖分—重链剖分小记/hld.png" alt="hid"></p>
 <p>它可以用于求LCA(据说比倍增的LCA快)，它还可以将一棵树拆成很多条链，方便线段树维护等。</p>
 <h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>树链剖分代码不长，但是他要定义许多变量，emmmmmm，比较烦人，树链剖分的初始化就两个bfs。</p>
 <h4 id="存储"><a href="#存储" class="headerlink" title="存储"></a>存储</h4><pre><code class="lang-cpp">struct node
@@ -585,7 +585,7 @@ int rnk[i]; //i节点剖分以后的新结点编号
 }
 </code></pre>
 <blockquote>
-<p>dfs跑完大概是这样的，大家可以手动模拟一下<br><img src="/articles/2019/10/树链剖分—重链剖分小记/v2-9c08dae6f0b1d00234b281ef96611d3c_hd.jpg" alt="1"></p>
+<p>dfs跑完大概是这样的，大家可以手动模拟一下<br><img src="/10/树链剖分—重链剖分小记/v2-9c08dae6f0b1d00234b281ef96611d3c_hd.jpg" alt="1"></p>
 </blockquote>
 <p>第一个bfs求的则是剩下的</p>
 <pre><code class="lang-cpp">void dfs2(int u, int t)
@@ -605,7 +605,7 @@ int rnk[i]; //i节点剖分以后的新结点编号
     }
 }
 </code></pre>
-<p><img src="/articles/2019/10/树链剖分—重链剖分小记/64629076_p0_master1200.jpg" alt="2"></p>
+<p><img src="/10/树链剖分—重链剖分小记/64629076_p0_master1200.jpg" alt="2"></p>
 <h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><h4 id="1-求LCA"><a href="#1-求LCA" class="headerlink" title="1. 求LCA"></a>1. 求LCA</h4><p>让两个点不断向上跳到自己的链的顶端。一旦他们跳到了同一个链上，两个点中深度较小的点即为LCA。</p>
 <p>上代码：</p>
 <pre><code class="lang-cpp">inline int lca(int a, int b)
@@ -878,7 +878,7 @@ int main()
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">26</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/archives/2022/06/">六月 2022<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">26</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">2</span></a>
             </ul>
         </li>
         

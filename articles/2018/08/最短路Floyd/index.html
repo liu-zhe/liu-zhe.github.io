@@ -545,7 +545,7 @@
 <p>如下图：</p>
 <p>1 —&gt; 3的最短路是 1-&gt;4-&gt;0-&gt;2-&gt;3</p>
 <p>而最短路算法可以快速的帮我们解决此类问题。</p>
-<p><img src="/articles/2018/08/最短路Floyd/graph.png" alt="graph"></p>
+<p><img src="/08/最短路Floyd/graph.png" alt="graph"></p>
 <p>以下是NOIP必学的最短路算法</p>
 <blockquote>
 <p>Floyd O(n³) 多源最短路</p>
@@ -553,10 +553,10 @@
 <p>SPFA O(nm) 单源最短路</p>
 <h3 id="Floyd求最短路过程"><a href="#Floyd求最短路过程" class="headerlink" title="Floyd求最短路过程"></a>Floyd求最短路过程</h3></blockquote>
 <p>还拿上图举例（懒得画了 qwq）</p>
-<p><img src="/articles/2018/08/最短路Floyd/graph.png" alt="graph"></p>
+<p><img src="/08/最短路Floyd/graph.png" alt="graph"></p>
 <p>Floyd可以求任意两点间的最短路径</p>
 <p>Floyd基于类似三角不等式的思想，用了动态规划的思想。它在求两个点a.b的最短路时，在点外再找一个点k，看ak + bk是否小于ab。如果是，就更新ab为ak+bk。</p>
-<p><img src="/articles/2018/08/最短路Floyd/graph1.png" alt="graph1"></p>
+<p><img src="/08/最短路Floyd/graph1.png" alt="graph1"></p>
 <p>如上图，5-0可以找到4来更新，5-&gt;4=2,4-&gt;0=4,2+4=6 &gt; 7</p>
 <p>于是5-0被更新成6</p>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>核心代码：</p>
@@ -782,7 +782,7 @@ int main()
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">26</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/archives/2022/06/">六月 2022<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">26</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">2</span></a>
             </ul>
         </li>
         

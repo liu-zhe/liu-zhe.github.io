@@ -567,9 +567,9 @@
 </blockquote>
 <p>给个图您就明白了</p>
 <p>左图是广搜 右图是最佳优先搜索(A):</p>
-<p><img src="/articles/2019/08/DFS-BFS-ID-IDA-搜索算法简介/1.gif" alt="1"></p>
+<p><img src="/08/DFS-BFS-ID-IDA-搜索算法简介/1.gif" alt="1"></p>
 <p>下图是A* 搜索:</p>
-<p><img src="/articles/2019/08/DFS-BFS-ID-IDA-搜索算法简介/Astar.gif" alt="astar"></p>
+<p><img src="/08/DFS-BFS-ID-IDA-搜索算法简介/Astar.gif" alt="astar"></p>
 <p><a href="http://www.webhek.com/post/pathfinding.html" target="_blank" rel="noopener">动画展示各种路径搜索算法</a></p>
 <h1 id="搜索算法浅谈"><a href="#搜索算法浅谈" class="headerlink" title="搜索算法浅谈"></a>搜索算法浅谈</h1><h2 id="关于DFS"><a href="#关于DFS" class="headerlink" title="关于DFS"></a>关于DFS</h2><p>这东西应该是妇孺皆知,<del>不知道的话您就可以退役了</del>.</p>
 <h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>我就不多讲了,说一下她的优点:</p>
@@ -582,7 +582,7 @@
 </ol>
 <p>为什么浪费时间呢?</p>
 <p>看个图你就明白了:</p>
-<p><img src="/articles/2019/08/DFS-BFS-ID-IDA-搜索算法简介/dfs.png" alt="dfs"></p>
+<p><img src="/08/DFS-BFS-ID-IDA-搜索算法简介/dfs.png" alt="dfs"></p>
 <p>不要随便加剪枝,有些剪枝用处很小,不会节约太多时间,但是你的程序将会对她进行无数次特判,这个代价可比你剪枝节约的时间高多了</p>
 <p>代码大体框架:</p>
 <pre><code class="lang-cpp">void dfs(状态A)
@@ -621,7 +621,7 @@ while(!q.empty())
 }
 </code></pre>
 <h2 id="关于迭代加深搜索-ID-与IDA"><a href="#关于迭代加深搜索-ID-与IDA" class="headerlink" title="关于迭代加深搜索(ID)与IDA*"></a>关于迭代加深搜索(ID)与IDA*</h2><p>蓦然回首,再去看一眼上图:</p>
-<p><img src="/articles/2019/08/DFS-BFS-ID-IDA-搜索算法简介/dfs.png" alt="dfs"></p>
+<p><img src="/08/DFS-BFS-ID-IDA-搜索算法简介/dfs.png" alt="dfs"></p>
 <p>我们发现如果现在的路的深度没有上限，即没有底，那么直接DFS就回不来了,但终点就在第二层,怎么办?</p>
 <p>我们设一个深度d每次搜到d层就回头去搜别的分支,如果没搜到就让d++,再从头搜一次.这种算法思想上相当于是DFS+BFS的合体,但是缺点很明显，重复遍历解答树上层多次，造成巨大浪费。</p>
 <p>于是我们伟大的前辈们开动脑筋,发明了 <strong>IDA*</strong>.</p>
@@ -856,7 +856,7 @@ namespace ida
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">26</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/archives/2022/06/">六月 2022<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">26</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">2</span></a>
             </ul>
         </li>
         

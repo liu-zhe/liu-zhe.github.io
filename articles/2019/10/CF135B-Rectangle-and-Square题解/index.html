@@ -551,16 +551,16 @@
 <p><strong><em>对于矩形的判定：</em></strong></p>
 <p><del>复习初中内容（</del></p>
 <p>我们有这么一个几何图形：</p>
-<p><img src="/articles/2019/10/CF135B-Rectangle-and-Square题解/1.png" alt="1"></p>
+<p><img src="/10/CF135B-Rectangle-and-Square题解/1.png" alt="1"></p>
 <p>要证明它是一个矩形，先要证明它是平行四边形，所以它的对边要相等。</p>
-<p><img src="/articles/2019/10/CF135B-Rectangle-and-Square题解/2.png" alt="2"></p>
+<p><img src="/10/CF135B-Rectangle-and-Square题解/2.png" alt="2"></p>
 <p>对于一个平行四边形，我们只需要证明它的其中一个角是直角便可证明他是矩形。</p>
 <p><del>我比较菜，不会什么叉积。</del></p>
 <p>我们只需使用 <em>勾股逆定理</em> 便可</p>
 <blockquote>
 <p>如果三角形两条边的平方和等于第三边的平方，那么这个三角形就是直角三角形。最长边所对的角为直角</p>
 </blockquote>
-<p><img src="/articles/2019/10/CF135B-Rectangle-and-Square题解/3.png" alt="3"></p>
+<p><img src="/10/CF135B-Rectangle-and-Square题解/3.png" alt="3"></p>
 <script type="math/tex; mode=display">a^2 + b^2 = c^2</script><p>而</p>
 <script type="math/tex; mode=display">a = (y_k - y_i)^2 + (x_k-x_i)^2</script><script type="math/tex; mode=display">b = (y_i - y_k)^2 + (x_j-x_i)^2</script><script type="math/tex; mode=display">c = (y_k - y_j)^2 + (x_k-x_j)^2</script><p>对于 <strong><em>正方形</em></strong> ，我们只需证明它是 <strong><em>临边相等</em></strong> 即可。</p>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre><code class="lang-cpp">#include &lt;algorithm&gt;
@@ -847,7 +847,7 @@ int main()
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">26</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/archives/2022/06/">六月 2022<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">26</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">2</span></a>
             </ul>
         </li>
         

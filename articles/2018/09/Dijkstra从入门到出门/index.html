@@ -550,14 +550,14 @@ Dijkstra算法是一种求最短路的算法。
 <h2 id="此算法不适用于-边权为负-的图"><a href="#此算法不适用于-边权为负-的图" class="headerlink" title="此算法不适用于 边权为负 的图"></a>此算法不适用于 边权为负 的图</h2></blockquote>
 <a id="more"></a> 
 <p><br></p>
-<h2 id="不啰嗦了，开门见山"><a href="#不啰嗦了，开门见山" class="headerlink" title="不啰嗦了，开门见山"></a>不啰嗦了，开门见<del>山</del></h2><p><img src="/articles/2018/09/Dijkstra从入门到出门/mar.png" alt="mar"> <del>我在后门看你十分钟了！！！</del></p>
+<h2 id="不啰嗦了，开门见山"><a href="#不啰嗦了，开门见山" class="headerlink" title="不啰嗦了，开门见山"></a>不啰嗦了，开门见<del>山</del></h2><p><img src="/09/Dijkstra从入门到出门/mar.png" alt="mar"> <del>我在后门看你十分钟了！！！</del></p>
 <p>dijkstra可以求两点间的最短路径，这种也叫单源最短路。</p>
 <p>而Floyd求的是多个点之间的最短路。</p>
 <p>dijkstra有很多奇奇怪怪的优化，我们后面用STL优先级队列（priority_queue）把dijkstra优化到O(nlogn)</p>
 <h2 id="朴素的Dijkstra"><a href="#朴素的Dijkstra" class="headerlink" title="朴素的Dijkstra"></a>朴素的Dijkstra</h2><h3 id="思想-amp-amp-实现"><a href="#思想-amp-amp-实现" class="headerlink" title="思想&amp;&amp;实现"></a>思想&amp;&amp;实现</h3><p>dijkstra的思想大体是这样： 找与当前点距离最小的点，同时用它来更新与他相邻的其它点。</p>
 <p>我们，有一张无向图。</p>
 <p>求2到4的最短路径。</p>
-<p><img src="/articles/2018/09/Dijkstra从入门到出门/graph.png" alt></p>
+<p><img src="/09/Dijkstra从入门到出门/graph.png" alt></p>
 <p>我们开一个dis数组和vis数组，dis[i]=j表示起点到i号点的距离为j，vis[i]表示i号结点有没有被遍历过。</p>
 <p>初始化：</p>
 <pre><code class="lang-cpp">for (int i = 1; i &lt;= n; i++)
@@ -572,17 +572,17 @@ Dijkstra算法是一种求最短路的算法。
 <pre><code class="lang-cpp">vis[start] = true;
 dis[start] = 0;
 </code></pre>
-<p><img src="/articles/2018/09/Dijkstra从入门到出门/graph1.png" alt></p>
+<p><img src="/09/Dijkstra从入门到出门/graph1.png" alt></p>
 <blockquote>
 <p>这是原点，所以不需要其他操作（更新最短路）</p>
 </blockquote>
 <p>我们枚举2号结点的临边</p>
 <p>我们的循环首先找到了5,5没有被遍历.</p>
 <p>我们用5推出其他节点的路径：dis[6] &lt; dis[5]+27=29,发现比他长，不改. dis[1]=dis[5]+8=10,</p>
-<p><img src="/articles/2018/09/Dijkstra从入门到出门/graph2.png" alt></p>
+<p><img src="/09/Dijkstra从入门到出门/graph2.png" alt></p>
 <p>Dijkstra的形式类似于广搜，而不是深搜</p>
 <p>我们接着寻找2号结点的其他临边，找到了点6，vis[6]=true.</p>
-<p><img src="/articles/2018/09/Dijkstra从入门到出门/graph3.png" alt></p>
+<p><img src="/09/Dijkstra从入门到出门/graph3.png" alt></p>
 <p>用6更新5号，1号点，发现比他们大，不更新。</p>
 <pre><code class="lang-cpp">for (int i = 1; i &lt;= n; i++)
 {    
@@ -922,7 +922,7 @@ int main(int argc, char **argv)
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">26</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/archives/2022/06/">六月 2022<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">26</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">2</span></a>
             </ul>
         </li>
         

@@ -548,7 +548,7 @@
 <p>为神魔药学图的邻接表存储呢？邻接矩阵多好！</p>
 </blockquote>
 <p>有时，当图很稀疏时，用邻接矩阵就会产生不必要的内存浪费。<br><a id="more"></a><br>如下图：</p>
-<p><img src="/articles/2018/08/图的邻接表存储/graph.png" alt="1"></p>
+<p><img src="/08/图的邻接表存储/graph.png" alt="1"></p>
 <p>它的邻接矩阵大概是这样：</p>
 <p>0 5 ∞ ∞ ∞</p>
 <p>5 0 3 ∞ ∞</p>
@@ -559,19 +559,19 @@
 <h3 id="邻接表原理"><a href="#邻接表原理" class="headerlink" title="邻接表原理"></a>邻接表原理</h3><p>邻接矩阵表示的是点与点的关系，而邻接表表示的是边和点的关系。</p>
 <p>我们有一个数组，head[i]，存的是i点发出的第一条边编号。</p>
 <p>同时，每一条边还有next,to,data变量，用来存储这条边的一个兄弟边的编号，即存储这条边的一个相邻的边的编号,to代表这条边到哪，data代表边权。</p>
-<p><img src="/articles/2018/08/图的邻接表存储/1.png" alt="1"></p>
+<p><img src="/08/图的邻接表存储/1.png" alt="1"></p>
 <p>首先，我们添加从 1-&gt;2 的边，当前边的编号为1，把head[1]发出的第一条边的编号设为1（这里1-&gt;2边的编号是1，所以是1）。</p>
 <p>因为是无向图，所以我们也要添加一条从 2-&gt;1的边，这条边的编号为2，我们把把head[2]发出的第一条边的编号设为2。</p>
-<p><img src="/articles/2018/08/图的邻接表存储/2.png" alt="2"></p>
+<p><img src="/08/图的邻接表存储/2.png" alt="2"></p>
 <p>我们添加从 2-&gt;3 的边，当前边的编号为3，把head[2]发出的第一条边的编号设为3，把原先的head[2]=2设为3的next。</p>
 <p>我们也添加一条从 3-&gt;2的边，这条边的编号为4，我们把把head[3]发出的第一条边的编号设为4。</p>
-<p><img src="/articles/2018/08/图的邻接表存储/3.png" alt="3"></p>
+<p><img src="/08/图的邻接表存储/3.png" alt="3"></p>
 <p>我们添加从 3-&gt;4 的边，当前边的编号为5，把head[3]发出的第一条边的编号设为5，把原先的head[3]=4设为5的next。</p>
 <p>我们也添加一条从 4-&gt;3的边，这条边的编号为6，我们把把head[4]发出的第一条边的编号设为6。</p>
-<p><img src="/articles/2018/08/图的邻接表存储/4.png" alt="4"></p>
+<p><img src="/08/图的邻接表存储/4.png" alt="4"></p>
 <p>我们添加从 4-&gt;5 的边，当前边的编号为7，把head[4]发出的第一条边的编号设为6，把原先的head[4]=6设为7的next。</p>
 <p>我们也添加一条从 5-&gt;4的边，这条边的编号为8，我们把把head[5]发出的第一条边的编号设为8。</p>
-<p><img src="/articles/2018/08/图的邻接表存储/5.png" alt="5"></p>
+<p><img src="/08/图的邻接表存储/5.png" alt="5"></p>
 <h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><pre><code class="lang-cpp">const int maxn=1000;
 
 struct node
@@ -758,7 +758,7 @@ add_edge(2,1,5);    //无向图
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">26</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/archives/2022/06/">六月 2022<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">26</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">2</span></a>
             </ul>
         </li>
         

@@ -543,7 +543,7 @@
 <h3 id="啥是线段树呀？"><a href="#啥是线段树呀？" class="headerlink" title="啥是线段树呀？"></a>啥是线段树呀？</h3><p>线段树是一种二叉搜索树，它与二叉搜索树不同的是它的每一个节点表示的是一个区间的和，最小值，最大值等等（这要看题目如何要求了）。</p>
 </blockquote>
 <p>下图是一个表示区间和的线段树</p>
-<p><img src="/articles/2018/08/线段树小记/1.jpeg" alt="1"></p>
+<p><img src="/08/线段树小记/1.jpeg" alt="1"></p>
 <p>线段树支持区间修改，区间查询。<br>线段树节点的左儿子是它区间的左边一半，同理，右儿子是右边一半，当这个区间中的元素只有一个时，它就是叶子节点。</p>
 <h3 id="线段树咋实现呀？"><a href="#线段树咋实现呀？" class="headerlink" title="线段树咋实现呀？"></a>线段树咋实现呀？</h3><p>我们有一个区间长度为n的线段树，有m次操作。</p>
 <p>我们开一个数组z来存储线段树。</p>
@@ -593,9 +593,9 @@ int query(int l,int r,int rt,int findl,int findr)               //询问某段�
         else return query(rson,findl,findr);             //要找的区间在右子树上
 }
 </code></pre>
-<p>问题来了，如果我们要找的区间在要找的区间贯穿左右子树时要怎么办呢？<br>比如说我们要求区间【4，7】的和。<br><img src="/articles/2018/08/线段树小记/3.jpeg" alt="3"></p>
+<p>问题来了，如果我们要找的区间在要找的区间贯穿左右子树时要怎么办呢？<br>比如说我们要求区间【4，7】的和。<br><img src="/08/线段树小记/3.jpeg" alt="3"></p>
 <p>那我们就左右各查询一半吧！</p>
-<p><img src="/articles/2018/08/线段树小记/2.jpeg" alt="2"></p>
+<p><img src="/08/线段树小记/2.jpeg" alt="2"></p>
 <p>于是程序变成了。。。</p>
 <pre><code class="lang-cpp">#define lson l,m,rt*2
 #define rson m+1,r,rt*2+1
@@ -1146,7 +1146,7 @@ int main()
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">26</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/archives/2022/06/">六月 2022<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">26</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">2</span></a>
             </ul>
         </li>
         
